@@ -56,8 +56,8 @@ define([
       });
     },
 
-    add: function(cartID, productID){
-      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: 1 }], checkoutId: "' + cartID + '" ) { checkout { id lineItems(first:2) { edges { node { id title quantity } } } } } }';
+    add: function(cartID, productID, nQty){
+      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id lineItems(first:2) { edges { node { id title quantity } } } } } }';
       $.ajax({
         url: 'https://rodeostore.myshopify.com/api/graphql',
         type: 'POST',
@@ -75,10 +75,62 @@ define([
       });
     },
 
+    update: function(cartID, productID, nQty){
+      var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id lineItems(first:2) { edges { node { id title quantity } } } } } }';
+      $.ajax({
+        url: 'https://rodeostore.myshopify.com/api/graphql',
+        type: 'POST',
+        datatype: 'json',
+        data: strQuery,
+        success: function(response) {
+          // fire event
+          app.dispatcher.trigger("CartView:updatedQty", response);
+        },
+        error: function(response) {
+          console.log('ERR');
+          console.log(response);
+        },
+        beforeSend: setShopifyHeader
+      });
+    },
+
+    remove: function(cartID, productID){
+      var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id lineItems(first:2) { edges { node { id title quantity } } } } } }';
+      $.ajax({
+        url: 'https://rodeostore.myshopify.com/api/graphql',
+        type: 'POST',
+        datatype: 'json',
+        data: strQuery,
+        success: function(response) {
+          // fire event
+          app.dispatcher.trigger("CartView:updatedRemove", response);
+        },
+        error: function(response) {
+          console.log('ERR');
+          console.log(response);
+        },
+        beforeSend: setShopifyHeader
+      });
+    },
+
     render: function(jsonCart){
       var self = this;
 
       $(this.el).html(this.template({ cart: jsonCart }));
+
+      $('.item .btn-update-cart-item-qty', $(this).el).click(function(evt){
+        // get cart
+        var elCart = $(this).closest('.cart');
+        // fire event
+        app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'));
+      });
+
+      $('.item .btn-remove-cart-item', $(this).el).click(function(evt){
+        // get cart
+        var elCart = $(this).closest('.cart');
+        // fire event
+        app.dispatcher.trigger("CartView:removeCartItem", elCart.attr('data-id'), $(this).attr('data-id'));
+      });
 
       return this;
     }

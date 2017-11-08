@@ -34,7 +34,7 @@ function setCartCookie(token){
 }
 
 function removeCartCookie(){
-  $.removeCookie(COOKIE_PREFIX + 'carttoken');
+  $.removeCookie(COOKIE_PREFIX + 'carttoken', { path: '/' });
 }
 
 function getCartCookie(){

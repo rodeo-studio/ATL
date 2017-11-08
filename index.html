@@ -43,11 +43,13 @@ Products
 
 <script type="text/template" id="cartViewTemplate">
 Cart
-{{ _.each(cart.data.checkoutLineItemsAdd.checkout.lineItems.edges, function(item, index) { }}
-  <div>
-  {{= item.node.title }} - {{= item.node.quantity }}
+<div class="cart" data-id="{{= cart.checkout.id }}">
+{{ _.each(cart.checkout.lineItems.edges, function(item, index) { }}
+  <div class="item">
+  {{= item.node.title }} - {{= item.node.quantity }} <span class="btn btn-update-cart-item-qty" data-id="{{= item.node.id }}">Update</span> <span class="btn btn-remove-cart-item" data-id="{{= item.node.id }}">Remove</span>
   </div>
 {{ }); }}
+</div>
 </script>
 
 </body>
