@@ -10,10 +10,24 @@ require.config({
     async: 'libs/async',
     bootstrap: 'libs/bootstrap.min',
     modernizr: 'libs/modernizr-custom',
+    imageScale: 'libs/image-scale.min',
+    imagesLoaded: 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min',
+    parallax: 'libs/parallax.min',
     cookie: 'libs/js.cookie'
   },
   shim: {
     'bootstrap' : {
+      deps: ['jquery']
+    },
+    'imageScale': {
+      deps: ['jquery'],
+      exports: 'imageScale'
+    },
+    'imagesLoaded': {
+      deps: ['jquery'],
+      exports: 'imagesLoaded'
+    },
+    'parallax' : {
       deps: ['jquery']
     },
     'cookie' : {

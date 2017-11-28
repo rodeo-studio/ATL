@@ -1,14 +1,19 @@
 var app = app || {};
 
+var SLIDE_TIMER = 8000;
+
 define([
   'underscore',
   'backbone',
   'bootstrap',
   'modernizr',
+  'imageScale',
+  'views/HeroSlideView',
+  'parallax',
   'cookie',
   'views/ProductsView',
   'views/CartView'
-], function(_, Backbone, bootstrap, modernizr, cookie, ProductsView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, parallax, cookie, ProductsView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -19,6 +24,11 @@ define([
 
   var initialize = function() {
     var self = this;
+    var arrHeroSlides = new Array;
+    var nCurrSlide = 0;
+    var bFirstResize = true;
+
+    app.dispatcher.on("HeroSlideView:ready", onHeroSlideViewReady);
 
     app.dispatcher.on("ProductsView:loaded", onProductsLoaded);
     app.dispatcher.on("ProductsView:addToCart", onProductAddToCart);
@@ -31,20 +41,55 @@ define([
     app.dispatcher.on("CartView:updateCartItemQty", onUpdateCartItemQty);
     app.dispatcher.on("CartView:removeCartItem", onRemoveCartItem);
 
-    var productsView = new ProductsView({ el: '#products-view' });
-    productsView.load();
+    function changeSlide() {
+      arrHeroSlides[nCurrSlide].hide();
 
-    var cartView = new CartView({ el: '#cart-view' });
-
-    var cartCookie = getCartCookie();
-    console.log(cartCookie);
-    if (cartCookie != undefined) {
-      // we have a cart
-      cartView.load(cartCookie);
+      if (nCurrSlide+1 < arrHeroSlides.length) {
+        nCurrSlide++;
+      }
+      else {
+        nCurrSlide = 0;
+      }
+      arrHeroSlides[nCurrSlide].show();
     }
-    else {
-      // no cart
-      cartView.create();
+
+    function initHeroSlides() {
+      $('.hero-item').each(function(index){
+        arrHeroSlides.push(new HeroSlideView({ el: $(this) }));
+      });
+      arrHeroSlides[nCurrSlide].show();
+
+      setInterval(function(){
+        changeSlide();
+      }, SLIDE_TIMER);
+    }
+
+    function handleResize() {
+      var nWindowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+      if (bFirstResize) {
+        bFirstResize = false;
+
+        $('.hero').css('height', nWindowHeight);
+        $('.hero .strap').css('height', nWindowHeight);
+        $('.hero .strap').css('line-height', nWindowHeight + 'px');
+      }
+
+      if ($('#menu-overlay').hasClass('open')) {
+        // defined height + enough space to see some content underneath
+        var nMenusHeight = 400 + 100;
+        if (nWindowHeight < nMenusHeight) {
+          nMenusHeight = nWindowHeight;
+        }
+        $('#menu-overlay').css('height', nMenusHeight);
+      }
+      else {
+        $('#menu-overlay').css('height', 0);
+      }
+    }
+
+    function onHeroSlideViewReady(elHeroSlide) {
+      console.log('ready');
     }
 
     function onProductsLoaded() {
@@ -86,6 +131,59 @@ define([
       cartView.remove(cartID, productID);
     }
 
+    $(window).scroll(function() {
+      handleResize();
+    });
+
+    $(window).resize(function() {
+      handleResize();
+    });
+
+    var productsView = new ProductsView({ el: '#products-view' });
+    productsView.load();
+
+    var cartView = new CartView({ el: '#cart-view' });
+
+    var cartCookie = getCartCookie();
+    console.log(cartCookie);
+    if (cartCookie != undefined) {
+      // we have a cart
+      cartView.load(cartCookie);
+    }
+    else {
+      // no cart
+      cartView.create();
+    }
+
+    $('.content').show();
+    $('img.scale').imageScale({'rescaleOnResize': true});
+
+    handleResize();
+
+    $('.hero-container').show();
+
+    $('img.scale').imageScale({
+      'rescaleOnResize': true
+    });
+
+    initHeroSlides();
+
+    $('#menu-btn').click(function(){
+      $(this).toggleClass('open');
+      $('#menu-overlay').toggleClass('open');
+
+      handleResize();
+    });
+
+    $('.container-fluid').click(function(evt){
+      $('#menu-btn').removeClass('open');
+      $('#menu-overlay').removeClass('open');
+
+      handleResize();
+    });
+
+    // for the parallax
+    jQuery(window).trigger('resize').trigger('scroll');
   };
 
   return { 

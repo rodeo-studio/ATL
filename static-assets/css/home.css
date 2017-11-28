@@ -1,0 +1,56 @@
+h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'gilroybold';
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 1.8em;
+  line-height: 1.1em;
+}
+
+/* FEATURE PHOTO VIEW */
+/******************************************/
+.feature-photo-view .blank {
+  height: 200px;
+}
+
+.feature-photo-view .parallax-window {
+  min-height: 282px;
+  background: transparent;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6.5em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* Small devices (tablets, 992px and up) */
+@media (min-width: 992px) {
+  .feature-photo-view .parallax-window {
+    min-height: 646px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 7.5em;
+  }
+
+  h2 {
+    font-size: 2.1em;
+  }
+}
