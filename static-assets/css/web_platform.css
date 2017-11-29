@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'gilroymedium';
-  font-size: 14px;
+  font-family: 'inconsolataregular';
+  font-size: 12px;
   line-height: 1.3em;
   color: #FFF;
   background-color: #FFF;
@@ -199,7 +199,8 @@ img.scale {
 }
 
 #menu-overlay .menus li {
-  font-family: 'gilroybold';
+  font-family: 'ano_blackwide';
+  text-transform: uppercase;
   padding: 8px 0;
 }
 

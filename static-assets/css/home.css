@@ -15,6 +15,28 @@ h2 {
   line-height: 1.1em;
 }
 
+/* PAGE HIGHLIGHT VIEW */
+/******************************************/
+.page-highlight-view {
+  padding: 37px 8px 33px 8px;
+}
+
+.page-highlight-view .element-container {
+  padding: 13px 8px 13px 8px;
+}
+
+/* QUOTE VIEW */
+/******************************************/
+.quote-view {
+  padding: 0 16px 116px 16px;
+  font-family: 'ano_blackwide';
+  color: #84754E;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1.3em;
+}
+
 /* FEATURE PHOTO VIEW */
 /******************************************/
 .feature-photo-view .blank {
@@ -35,12 +57,38 @@ h2 {
   h2 {
     font-size: 1.8em;
   }
+
+  .page-highlight-view {
+    padding: 94px 15px 82px 15px;
+  }
+
+  .page-highlight-view .element-container {
+    padding: 0 5px 0 5px;
+  }
+
+  .quote-view {
+    padding: 0 122px 104px 122px;
+    font-size: 3.2em;
+  }
 }
 
 /* Small devices (tablets, 992px and up) */
 @media (min-width: 992px) {
+  .page-highlight-view {
+    padding: 70px 25px 112px 25px;
+  }
+
+  .page-highlight-view .element-container {
+    padding: 0 8px 0 8px;
+  }
+
   .feature-photo-view .parallax-window {
     min-height: 646px;
+  }
+
+  .quote-view {
+    padding: 0 138px 124px 138px;
+    font-size: 4em;
   }
 }
 
@@ -52,5 +100,18 @@ h2 {
 
   h2 {
     font-size: 2.1em;
+  }
+
+  .page-highlight-view {
+    padding: 102px 44px 238px 44px;
+  }
+
+  .page-highlight-view .element-container {
+    padding: 0 8px 0 8px;
+  }
+
+  .quote-view {
+    padding: 0 170px 354px 170px;
+    font-size: 5.8em;
   }
 }
