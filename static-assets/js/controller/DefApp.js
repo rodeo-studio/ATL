@@ -174,6 +174,12 @@ define([
       }, 1000);
     });
 
+    $('.top').click(function(evt){
+      $('html, body').animate({
+        scrollTop: $("#top").offset().top
+      }, 1000);
+    });
+
     $('#menu-btn').click(function(){
       $(this).toggleClass('open');
       $('#menu-overlay').toggleClass('open');
