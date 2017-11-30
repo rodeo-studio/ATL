@@ -27,6 +27,7 @@ define([
     var arrHeroSlides = new Array;
     var nCurrSlide = 0;
     var bFirstResize = true;
+    var nHeroHeight = 0;
 
     app.dispatcher.on("HeroSlideView:ready", onHeroSlideViewReady);
 
@@ -70,9 +71,10 @@ define([
       if (bFirstResize) {
         bFirstResize = false;
 
-        $('.hero').css('height', nWindowHeight);
-        $('.hero .strap').css('height', nWindowHeight);
-        $('.hero .strap').css('line-height', nWindowHeight + 'px');
+        nHeroHeight = nWindowHeight;
+        $('.hero').css('height', nHeroHeight);
+        $('.hero .strap').css('height', nHeroHeight);
+        $('.hero .strap').css('line-height', nHeroHeight + 'px');
       }
 
       if ($('#menu-overlay').hasClass('open')) {
@@ -132,6 +134,13 @@ define([
     }
 
     $(window).scroll(function() {
+      $('.cart-menu').removeClass('dark');
+      $('.main-menu').removeClass('dark');
+      if ($(document).scrollTop() > (nHeroHeight)) {
+        $('.cart-menu').addClass('dark');
+        $('.main-menu').addClass('dark');
+      }
+
       handleResize();
     });
 
