@@ -66,6 +66,24 @@ img.scale {
 
 /* MENUS */
 /******************************************/
+.cart-menu {
+  position: fixed;
+  top: 14px;
+  right: 64px;
+}
+
+.cart-menu .cart {
+  display: inline-block;
+  font-size: 2.6em;
+}
+
+.cart-menu .items {
+  display: inline-block;
+  padding-top: 8px;
+  vertical-align: top;
+  font-size: 1.3em;
+}
+
 .main-menu {
   position: fixed;
   top: 18px;
@@ -190,18 +208,15 @@ img.scale {
   width: 100%;
   text-align: center;
   color: #FFF;
-  font-size: 2em;
-  line-height: 1em;
+  font-size: 2.2em;
+  line-height: 1.3em;
   overflow: hidden;
-}
-
-#menu-overlay .menus ul {
 }
 
 #menu-overlay .menus li {
   font-family: 'ano_blackwide';
   text-transform: uppercase;
-  padding: 8px 0;
+  padding: 9px 42px;
 }
 
 /* HERO */
@@ -209,6 +224,7 @@ img.scale {
 .hero {
   position: relative;
   width: 100%;
+  min-height: 600px;
 }
 
 .hero .hero-container {
@@ -232,14 +248,6 @@ img.scale {
   transition: opacity 2s;
 }
 
-.hero .icon {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 100px;
-  height: 119px;
-}
-
 .hero .strap {
   position: absolute;
   top: 0;
@@ -248,28 +256,26 @@ img.scale {
   padding: 0 12px;
 }
 
-.hero .strap h1 {
-  display: inline-block;
-  vertical-align: middle;
+.hero .strap .logo {
+  margin: 0 auto;
+  width: 226px;
+}
+
+.hero .strap .logo img {
+  width: 100%;
 }
 
 .hero .down {
   position: absolute;
-  bottom: 0px;
+  bottom: 32px;
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-size: 6em;
+  font-size: 4em;
   line-height: 1em;
 }
 .hero .down:hover {
   cursor: pointer;
-}
-
-@media (min-width: 576px) {
-  h1 {
-    font-size: 5.5em;
-  }
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -282,23 +288,49 @@ img.scale {
     font-size: 2em;
   }
 
-  .hero .icon {
-    width: 138px;
-    height: 165px;
-  }
-
   #menu-overlay .menus {
     font-size: 2.6em;
+  }
+
+  #menu-overlay .menus li {
+    padding: 12px 0;
+  }
+
+  .hero .strap .logo {
+    width: 450px;
   }
 }
 
 /* Small devices (tablets, 992px and up) */
 @media (min-width: 992px) {
+  #menu-overlay .menus {
+    font-size: 2.5em;
+  }
+
+  #menu-overlay .menus li {
+    padding: 10px 0;
+  }
+
+  .hero .strap .logo {
+    width: 312px;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   h1 {
     font-size: 7.5em;
+  }
+
+  #menu-overlay .menus {
+    font-size: 2.6em;
+  }
+
+  #menu-overlay .menus li {
+    padding: 12px 0;
+  }
+
+  .hero .strap .logo {
+    width: 454px;
   }
 }

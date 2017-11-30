@@ -168,6 +168,12 @@ define([
 
     initHeroSlides();
 
+    $('.down').click(function(evt){
+      $('html, body').animate({
+        scrollTop: $("#content").offset().top
+      }, 1000);
+    });
+
     $('#menu-btn').click(function(){
       $(this).toggleClass('open');
       $('#menu-overlay').toggleClass('open');

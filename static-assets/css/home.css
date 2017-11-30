@@ -1,7 +1,7 @@
 h1, h2 {
   margin: 0;
   padding: 0;
-  font-family: 'gilroybold';
+  font-family: 'ano_blackwide';
   font-weight: normal;
 }
 
@@ -23,6 +23,53 @@ h2 {
 
 .page-highlight-view .element-container {
   padding: 13px 8px 13px 8px;
+}
+
+.page-highlight-view .content-container {
+  position: relative;
+}
+.page-highlight-view .content-container:hover {
+  cursor: pointer;
+}
+
+.page-highlight-view .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.page-highlight-view .content-container:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-highlight-view .element-container .text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 18px;
+}
+
+.page-highlight-view .element-container .text .title {
+  font-family: 'ano_blackwide';
+  font-size: 2.4em;
+  line-height: 2em;
+  text-transform: uppercase;
+}
+
+.page-highlight-view .content-container:hover .text .title {
+  text-decoration: underline;
+  text-decoration-color: #FFF;
+  -webkit-text-decoration-color: #FFF;
+}
+
+.page-highlight-view .element-container .text .synopsis {
+  display: none;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+.page-highlight-view .content-container:hover .text .synopsis {
+  display: block;
 }
 
 /* QUOTE VIEW */
@@ -48,6 +95,88 @@ h2 {
   background: transparent;
 }
 
+.feature-photo-view .feature-caption {
+  padding: 8px 15px;
+  color: #2E2E2E;
+  font-size: 0.8em;
+}
+
+/* PAGE EXTRA HIGHLIGHT VIEW */
+/******************************************/
+.page-extra-highlight-view {
+  padding: 40px 13px;
+}
+
+.page-extra-highlight-view .element-container {
+  padding: 0 3px;
+}
+
+.page-extra-highlight-view .content-container {
+  position: relative;
+}
+.page-extra-highlight-view .content-container:hover {
+  cursor: pointer;
+}
+
+.page-extra-highlight-view .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page-extra-highlight-view .element-container .text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-extra-highlight-view .element-container .text .title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'ano_blackwide';
+  text-transform: uppercase;
+  font-size: 1.1em;
+  line-height: 2em;
+  text-align: center;
+  height: 2em;
+  margin: auto;
+}
+
+.page-extra-highlight-view .content-container:hover .text .title {
+  text-decoration: underline;
+  text-decoration-color: #FFF;
+  -webkit-text-decoration-color: #FFF;
+}
+
+/* WARNING VIEW */
+/******************************************/
+.warning-view {
+  background-color: #84754E;
+  text-align: center;
+}
+
+.warning-view .element-container {
+  padding: 30px 12px;
+}
+
+.warning-view .title {
+  padding-bottom: 10px;
+  font-family: 'ano_blackwide';
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+.warning-view .text {
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   h1 {
@@ -66,9 +195,43 @@ h2 {
     padding: 0 5px 0 5px;
   }
 
+  .page-highlight-view .element-container .text .title {
+    font-size: 2.2em;
+  }
+
   .quote-view {
     padding: 0 122px 104px 122px;
     font-size: 3.2em;
+  }
+
+  .feature-photo-view .feature-caption {
+    padding: 8px 20px;
+    font-size: 1em;
+  }
+
+  .page-extra-highlight-view {
+    padding: 106px 76px 142px 76px;
+  }
+
+  .page-extra-highlight-view .element-container {
+    padding: 0 4px;
+  }
+
+  .page-extra-highlight-view .element-container .text .title {
+    font-size: 2.1em;
+  }
+
+  .warning-view .element-container {
+    padding: 56px 124px;
+  }
+
+  .warning-view .title {
+    padding-bottom: 18px;
+    font-size: 1.5em;
+  }
+
+  .warning-view .text {
+    font-size: 1.3em;
   }
 }
 
@@ -82,6 +245,10 @@ h2 {
     padding: 0 8px 0 8px;
   }
 
+  .page-highlight-view .element-container .text .title {
+    font-size: 2.4em;
+  }
+
   .feature-photo-view .parallax-window {
     min-height: 646px;
   }
@@ -89,6 +256,26 @@ h2 {
   .quote-view {
     padding: 0 138px 124px 138px;
     font-size: 4em;
+  }
+
+  .feature-photo-view .feature-caption {
+    padding: 8px 30px;
+  }
+
+  .page-extra-highlight-view {
+    padding: 84px 182px 142px 182px;
+  }
+
+  .page-extra-highlight-view .element-container {
+    padding: 0 6px;
+  }
+
+  .page-extra-highlight-view .element-container .text .title {
+    font-size: 2.5em;
+  }
+
+  .warning-view .element-container {
+    padding: 96px 108px 102px 108px;
   }
 }
 
@@ -111,7 +298,23 @@ h2 {
   }
 
   .quote-view {
-    padding: 0 170px 354px 170px;
+    padding: 0 266px 354px 266px;
     font-size: 5.8em;
+  }
+
+  .feature-photo-view .feature-caption {
+    padding: 8px 50px;
+  }
+
+  .page-extra-highlight-view {
+    padding: 136px 182px 152px 182px;
+  }
+
+  .page-extra-highlight-view .element-container {
+    padding: 0 8px;
+  }
+
+  .warning-view .element-container {
+    padding: 98px 338px;
   }
 }
