@@ -3,64 +3,30 @@
 <head>
 <% base_tag %>
 <% include GetIncludes %>
-<link href='static-assets/css/home.css' rel='stylesheet' />
+<link href='static-assets/css/products.css' rel='stylesheet' />
 </head>
 
-<body class="header-colour-toggle">
+<body>
 <script>
 var APP = 'DefApp';
 </script>
 
-<div id="top" class="home-view">
+<div id="top" class="products-view">
   <div class="container-fluid nopadding">
-    <div class="hero">
-      <div class="hero-container">
-        <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_home_hero.jpg"></div>
-        </div>
-        <div class="strap">
-          <div class="logo"><img src="static-assets/images/logo.png"></div>
-        </div>
-        <div class="down"><i class="icon-down-arrow"></i></div>
-      </div>
-    </div>
-
     <div id="content" class="content clearfix">
-      <div class="page-highlight-view clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page1.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Wines</div>
-                <div class="synopsis">
-                Sedit, volumquunt, voluptatem onsedis millenis acimo occatus atur suntemo dipicti bustis molorem volorer rorepuditem iniat quiam fugiti utecture.
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="page-products-intro-view">
+        <h1>$MenuTitle</h1>
+        <div class="intro">$Content</div>
+        <div class="links">
+          <span class="link">White</span> <span class="link">Red</span> <span class="link">Mixed Packs</span>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page2.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">About Us</div>
-                <div class="synopsis">
-                Sedit, volumquunt, voluptatem onsedis millenis acimo occatus atur suntemo dipicti bustis molorem volorer rorepuditem iniat quiam fugiti utecture.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="break"></div>
       </div>
 
-      <div class="quote-view clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-        h AljDHhS jmqui dOlOria derum l Un atur SolUPtAtut VelLrum q  are oFfis erUptat.
-        </div>
+      <div class="page-products-view">
+
+      <img src="static-assets/images/temp_product1.png">
+
       </div>
 
       <div class="feature-photo-view">
@@ -88,17 +54,6 @@ var APP = 'DefApp';
               <div class="text">
                 <div class="title">Contact</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="warning-view clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-          <div class="element-container">
-            <div class="title">Warning</div>
-            <div class="text">
-            Under the Liquor Control Reform Act 1998 it is an offence: to supply alcohol to a person under the age of 18 years (Penalty exceeds $8,000); for a person under the age of 18 years to purchase or receive liquor (Penalty exceeds $700). Liquor Licence #36128660.  
             </div>
           </div>
         </div>

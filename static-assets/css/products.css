@@ -1,0 +1,112 @@
+body {
+  background: #f2f1ed;
+}
+
+.cart-menu {
+  color: #000;
+}
+
+.main-menu #menu-btn span {
+  background: #000;
+}
+
+/* PRODUCTS INTRO VIEW */
+/******************************************/
+.page-products-intro-view {
+  padding: 94px 16px 0 16px;
+  color: #000;
+  text-align: center;
+}
+
+.page-products-intro-view h1 {
+  font-size: 3.3em;
+}
+
+.page-products-intro-view .intro {
+  padding: 38px 18px 38px 18px;
+}
+
+.page-products-intro-view .links {
+  padding: 36px 0 24px 0;
+  font-size: 1.2em;
+}
+
+.page-products-intro-view .link {
+  padding: 0 7px;
+  text-decoration: underline;
+}
+.page-products-intro-view .link:first-child {
+  padding-left: 0;
+}
+.page-products-intro-view .link:last-child {
+  padding-right: 0;
+}
+
+.page-products-intro-view .link:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.page-products-intro-view .break {
+  width: 100%;
+  height: 5px;
+  background: url("../images/break_line.png") repeat-x;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .page-products-intro-view {
+    padding: 124px 38px 0 38px;
+  }
+
+  .page-products-intro-view h1 {
+    font-size: 5em;
+  }
+
+  .page-products-intro-view .intro {
+    padding: 38px 80px 38px 80px;
+  }
+
+  .page-products-intro-view .links {
+    padding: 50px 0 14px 0;
+    text-align: right;
+  }
+}
+
+/* Small devices (tablets, 992px and up) */
+@media (min-width: 992px) {
+  .page-products-intro-view {
+    padding: 124px 108px 0 108px;
+  }
+
+  .page-products-intro-view h1 {
+    font-size: 5.8em;
+  }
+
+  .page-products-intro-view .intro {
+    padding: 38px 50px 38px 50px;
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  .page-products-intro-view .links {
+    padding: 38px 0 14px 0;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .page-products-intro-view {
+    padding: 134px 162px 0 162px;
+  }
+
+  .page-products-intro-view .intro {
+    padding: 44px 202px 44px 202px;
+    font-size: 1.3em;
+  }
+
+  .page-products-intro-view .links {
+    padding: 62px 0 20px 0;
+    font-size: 1.4em;
+  }
+}

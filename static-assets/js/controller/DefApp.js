@@ -133,16 +133,18 @@ define([
       cartView.remove(cartID, productID);
     }
 
-    $(window).scroll(function() {
-      $('.cart-menu').removeClass('dark');
-      $('.main-menu').removeClass('dark');
-      if ($(document).scrollTop() > (nHeroHeight)) {
-        $('.cart-menu').addClass('dark');
-        $('.main-menu').addClass('dark');
-      }
-
-      handleResize();
-    });
+    // do we want to update header colour on scroll?
+    if ($('body.header-colour-toggle').length) {
+      $(window).scroll(function() {
+        $('.cart-menu').removeClass('dark');
+        $('.main-menu').removeClass('dark');
+        if ($(document).scrollTop() > (nHeroHeight - 50)) {
+          $('.cart-menu').addClass('dark');
+          $('.main-menu').addClass('dark');
+        }
+        handleResize();
+      });
+    }
 
     $(window).resize(function() {
       handleResize();
@@ -169,13 +171,14 @@ define([
 
     handleResize();
 
-    $('.hero-container').show();
+    if ($('.hero-container').length) {
+      $('.hero-container').show();
+      initHeroSlides();
+    }
 
     $('img.scale').imageScale({
       'rescaleOnResize': true
     });
-
-    initHeroSlides();
 
     $('.down').click(function(evt){
       $('html, body').animate({
