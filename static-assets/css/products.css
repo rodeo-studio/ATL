@@ -53,6 +53,51 @@ body {
   background: url("../images/break_line.png") repeat-x;
 }
 
+/* PRODUCTS VIEW */
+/******************************************/
+.products-view {
+  padding: 28px 0 68px 0;
+}
+
+.products-view .product-view {
+  position: relative;
+  text-align: center;
+  color: #000;
+}
+
+.products-view .product-view a,
+.products-view .product-view a:visited,
+.products-view .product-view a:active,
+.products-view .product-view a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.products-view .image {
+  height: 212px;
+}
+
+.products-view .image img {
+  width: auto;
+  height: 100%;
+}
+
+.products-view .sold-out-container {
+  position: absolute;
+  top: 32px;
+  left: -32px;
+  width: 100%;
+}
+
+.products-view .sold-out {
+  width: 62px;
+  margin: 0 auto;
+}
+
+.products-view .title {
+  padding: 12px 0 0 0;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .page-products-intro-view {

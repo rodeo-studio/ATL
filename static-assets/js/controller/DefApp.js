@@ -12,8 +12,9 @@ define([
   'parallax',
   'cookie',
   'views/ProductsView',
+  'views/ProductView',
   'views/CartView'
-], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, parallax, cookie, ProductsView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, parallax, cookie, ProductsView, ProductView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -28,11 +29,14 @@ define([
     var nCurrSlide = 0;
     var bFirstResize = true;
     var nHeroHeight = 0;
+    var productsView = null, productView =null;
 
     app.dispatcher.on("HeroSlideView:ready", onHeroSlideViewReady);
 
     app.dispatcher.on("ProductsView:loaded", onProductsLoaded);
-    app.dispatcher.on("ProductsView:addToCart", onProductAddToCart);
+
+    app.dispatcher.on("ProductView:loaded", onProductLoaded);
+    app.dispatcher.on("ProductView:addToCart", onProductAddToCart);
 
     app.dispatcher.on("CartView:created", onCartCreated);
     app.dispatcher.on("CartView:loaded", onCartLoaded);
@@ -96,6 +100,8 @@ define([
 
     function onProductsLoaded() {
       productsView.render();
+      // for the parallax
+      jQuery(window).trigger('resize').trigger('scroll');
     }
 
     function onProductAddToCart(productID) {
@@ -103,6 +109,10 @@ define([
       if (cartCookie != undefined) {
         cartView.add(cartCookie, productID, 1);
       }
+    }
+
+    function onProductLoaded() {
+      productView.render();
     }
 
     function onCartCreated(cartID) {
@@ -150,13 +160,21 @@ define([
       handleResize();
     });
 
-    var productsView = new ProductsView({ el: '#products-view' });
-    productsView.load();
+    if ($('#products-view').length) {
+      productsView = new ProductsView({ el: '#products-view' });
+      productsView.load('');
+//      productsView.load('White');
+    }
+
+    if ($('#product-detail-view').length) {
+      console.log(PRODUCT_ID);
+      productView = new ProductView({ el: '#product-detail-view' });
+      productView.load(PRODUCT_ID);
+    }
 
     var cartView = new CartView({ el: '#cart-view' });
 
     var cartCookie = getCartCookie();
-    console.log(cartCookie);
     if (cartCookie != undefined) {
       // we have a cart
       cartView.load(cartCookie);

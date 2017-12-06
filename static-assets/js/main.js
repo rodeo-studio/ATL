@@ -1,4 +1,6 @@
 var COOKIE_PREFIX = 'atlaswine_';
+var SHOPIFY_ACCESS_TOKEN = '80f6ea0c1446bd06a9f99dcd7400f467';
+var SHOPIFY_GRAPHQL_API = 'https://atlas-wines.myshopify.com/api/graphql';
 
 require.config({
   waitSeconds: 10,
@@ -38,7 +40,7 @@ require.config({
 
 function setShopifyHeader(xhr) {
   xhr.setRequestHeader('Content-Type', 'application/graphql');
-  xhr.setRequestHeader('X-Shopify-Storefront-Access-Token', 'e50032fdb73536e1e5765985c40edca6');
+  xhr.setRequestHeader('X-Shopify-Storefront-Access-Token', SHOPIFY_ACCESS_TOKEN);
 }
 
 function setCartCookie(token){

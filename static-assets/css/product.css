@@ -1,0 +1,49 @@
+.cart-menu {
+  color: #000;
+}
+
+.main-menu #menu-btn span {
+  background: #000;
+}
+
+/* PRODUCT DETAIL VIEW */
+/******************************************/
+.product-detail-view {
+  padding: 60px 16px 60px 16px;
+  color: #000;
+  text-align: center;
+}
+
+.product-detail-view .title h1 {
+}
+
+.product-detail-view .image {
+  height: 460px;
+}
+
+.product-detail-view .image img {
+  width: auto;
+  height: 100%;
+}
+
+.product-detail-view .description {
+  padding: 0 14px;
+}
+
+.product-detail-view .description h1 {
+  padding: 62px 0 12px 0;
+  font-family: 'inconsolatabold';
+  font-size: 1.2em;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Small devices (tablets, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

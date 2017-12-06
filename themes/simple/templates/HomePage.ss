@@ -104,10 +104,6 @@ var APP = 'DefApp';
         </div>
       </div>
 
-      <div id="products-view"></div>
-
-      <div id="cart-view"></div>
-
       <div class="footer-view clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
           <div class="element-container">
@@ -165,29 +161,6 @@ var APP = 'DefApp';
 
   <% include DisplayMainMenu %>
 </div>
-
-<script type="text/template" id="productsViewTemplate">
-Products
-{{ _.each(products.edges, function(product, index) { }}
-  <div class="product">
-  {{= product.node.title }} - {{= product.node.variants.edges[0].node.price }}
-  <img width="100" src="{{= product.node.images.edges[0].node.src }}">
-
-  <span class="btn btn-add-to-cart" data-id="{{= product.node.variants.edges[0].node.id }}">Add to Cart</span>
-  </div>
-{{ }); }}
-</script>
-
-<script type="text/template" id="cartViewTemplate">
-Cart
-<div class="cart" data-id="{{= cart.checkout.id }}">
-{{ _.each(cart.checkout.lineItems.edges, function(item, index) { }}
-  <div class="item">
-  {{= item.node.title }} - {{= item.node.quantity }} <span class="btn btn-update-cart-item-qty" data-id="{{= item.node.id }}">Update</span> <span class="btn btn-remove-cart-item" data-id="{{= item.node.id }}">Remove</span>
-  </div>
-{{ }); }}
-</div>
-</script>
 
 <% include DisplayAnalytics %>
 </body>

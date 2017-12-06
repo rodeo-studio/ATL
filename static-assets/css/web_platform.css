@@ -77,6 +77,10 @@ img.scale {
   height: 100%;
 }
 
+#cart-view {
+  display: none;
+}
+
 .cart-menu {
   position: fixed;
   top: 10px;
@@ -93,6 +97,14 @@ img.scale {
 .cart-menu .cart {
   display: inline-block;
   font-size: 2.6em;
+}
+
+.cart-menu .cart a,
+.cart-menu .cart a:visited,
+.cart-menu .cart a:active,
+.cart-menu .cart a:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
 .cart-menu .items {
