@@ -5,11 +5,10 @@
 <div id="menu-overlay">
   <div class="menus">
   <ul>
-    <li><a href="{$BaseHref}">Home</a></li>
     <li><a href="{$BaseHref}products">Wines</a></li>
     <li><a href="{$BaseHref}">About Us</a></li>
     <li><a href="{$BaseHref}">Journal</a></li>
-    <li><a href="{$BaseHref}">Yineyards &amp; Growers</a></li>
+    <li><a href="{$BaseHref}">Vineyards &amp; Growers</a></li>
     <li><a href="{$BaseHref}">Contact</a></li>
     <li><a href="{$BaseHref}">FAQ</a></li>
   </ul>

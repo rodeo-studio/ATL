@@ -25,7 +25,6 @@ define([
 
           // fire event
           app.dispatcher.trigger("CartView:created", response.data.checkoutCreate.checkout.id);
-
         },
         error: function(response) {
           console.log('ERR');
@@ -116,12 +115,16 @@ define([
     render: function(jsonCart){
       var self = this;
 
-      $(this.el).show();
       // store total qty
       var nQty = 0;
       $.each(jsonCart.checkout.lineItems.edges, function(key, item){
         nQty += item.node.quantity;
       });
+
+      // only show if we have something in the cart
+      if (nQty) {
+        $(this.el).show();
+      }
 
       $(this.el).html(this.template({ cart: jsonCart, cartQty: nQty }));
 

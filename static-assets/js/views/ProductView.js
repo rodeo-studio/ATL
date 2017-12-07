@@ -35,12 +35,35 @@ define([
     render: function(){
       var self = this;
 
-      console.log(self.product);
       $(this.el).html(this.template(self.product));
 
+      var elQty = $('.qty', $(this).el);
+      var nMinQty = Number(elQty.attr('data-min-qty'));
+      var nQtyInc = Number(elQty.attr('data-qty-inc'));
+
       $('.btn-add-to-cart', $(this).el).click(function(evt){
+        var nQty = Number(elQty.attr('data-qty'));
+
         // fire event
-        app.dispatcher.trigger("ProductView:addToCart", $(this).attr('data-id'));
+        app.dispatcher.trigger("ProductView:addToCart", $(this).attr('data-id'), nQty);
+      });
+
+      $('.btn-qty.btn-less', $(this).el).click(function(evt){
+        var nQty = Number(elQty.attr('data-qty'));
+
+        if (nQty > nMinQty) {
+          nQty -= nQtyInc;
+          elQty.attr('data-qty', nQty);
+          elQty.html(nQty);
+        }
+      });
+
+      $('.btn-qty.btn-more', $(this).el).click(function(evt){
+        var nQty = Number(elQty.attr('data-qty'));
+
+        nQty += nQtyInc;
+        elQty.attr('data-qty', nQty);
+        elQty.html(nQty);
       });
 
       return this;
