@@ -41,6 +41,10 @@ define([
       var nMinQty = Number(elQty.attr('data-min-qty'));
       var nQtyInc = Number(elQty.attr('data-qty-inc'));
 
+      $('.back-link', $(this).el).click(function(evt){
+        window.history.back();
+      });
+
       $('.btn-add-to-cart', $(this).el).click(function(evt){
         var nQty = Number(elQty.attr('data-qty'));
 

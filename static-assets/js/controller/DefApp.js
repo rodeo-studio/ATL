@@ -9,12 +9,14 @@ define([
   'modernizr',
   'imageScale',
   'views/HeroSlideView',
+  'visible',
   'parallax',
+  'macy',
   'cookie',
   'views/ProductsView',
   'views/ProductView',
   'views/CartView'
-], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, parallax, cookie, ProductsView, ProductView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, visible, parallax, Macy, cookie, ProductsView, ProductView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -69,6 +71,17 @@ define([
       }, SLIDE_TIMER);
     }
 
+    function checkInView() {
+      var bVisible = false;
+      $('.journal-view .journal-post').each(function(index){
+        bVisible = $(this).visible(true);
+        if (bVisible) {
+          $(this).css('opacity', 1);
+          $('.post-container', $(this)).css('top', 0);
+        }
+      });
+    }
+
     function handleResize() {
       var nWindowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
@@ -92,6 +105,7 @@ define([
       else {
         $('#menu-overlay').css('height', 0);
       }
+      checkInView();
     }
 
     function onHeroSlideViewReady(elHeroSlide) {
@@ -168,6 +182,28 @@ define([
     if ($('#product-detail-view').length) {
       productView = new ProductView({ el: '#product-detail-view' });
       productView.load(PRODUCT_ID);
+    }
+
+    if ($('#macy-container').length) {
+      var macyInstance = Macy({
+        container: '#macy-container',
+        columns: 1,
+        waitForImages: true,
+        mobileFirst: true,
+        breakAt: {
+          768: {
+            columns: 2
+          }
+        }
+      });
+
+      macyInstance.on(macyInstance.constants.EVENT_IMAGE_COMPLETE, function (ctx) {
+        checkInView();
+
+        $(window).scroll(function() {
+          checkInView();
+        });
+      });
     }
 
     var cartView = new CartView({ el: '#cart-view' });

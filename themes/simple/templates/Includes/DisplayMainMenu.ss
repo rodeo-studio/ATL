@@ -1,13 +1,13 @@
 <div id="cart-view"></div>
 
-<div class="top-logo"><a href="{$BaseHref}"><img src="static-assets/images/logo_small.png"></a></div>
+<div class="top-logo"><a href="{$BaseHref}"><img class="black" src="static-assets/images/logo_small.png"><img class="white" src="static-assets/images/logo_small_white.png"></a></div>
 
 <div id="menu-overlay">
   <div class="menus">
   <ul>
     <li><a href="{$BaseHref}products">Wines</a></li>
     <li><a href="{$BaseHref}">About Us</a></li>
-    <li><a href="{$BaseHref}">Journal</a></li>
+    <li><a href="{$BaseHref}journal">Journal</a></li>
     <li><a href="{$BaseHref}">Vineyards &amp; Growers</a></li>
     <li><a href="{$BaseHref}">Contact</a></li>
     <li><a href="{$BaseHref}">FAQ</a></li>

@@ -73,6 +73,10 @@ img.scale {
   height: 19px;
 }
 
+.top-logo .white {
+  display: none;
+}
+
 .top-logo img {
   height: 100%;
 }
@@ -138,7 +142,7 @@ img.scale {
 #menu-btn span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 2px;
   width: 100%;
   background: #FFF;
   border-radius: 0px;
@@ -305,7 +309,7 @@ img.scale {
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-size: 4em;
+  font-size: 6em;
   line-height: 1em;
 }
 .hero .down:hover {
@@ -385,6 +389,11 @@ img.scale {
 /******************************************/
 .feature-photo-view .blank {
   height: 200px;
+}
+
+.feature-photo-view .image-window {
+  min-height: 282px;
+  background-position: center;
 }
 
 .feature-photo-view .parallax-window {
@@ -693,6 +702,7 @@ img.scale {
     font-size: 4em;
   }
 
+  .feature-photo-view .image-window,
   .feature-photo-view .parallax-window {
     min-height: 646px;
   }

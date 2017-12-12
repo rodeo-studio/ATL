@@ -11,10 +11,10 @@
 var APP = 'DefApp';
 </script>
 
-<div id="top" class="products-view">
+<div id="top">
   <div class="container-fluid nopadding">
     <div id="content" class="content clearfix">
-      <div class="page-products-intro-view clearfix">
+      <div class="products-intro-view clearfix">
         <h1>$MenuTitle</h1>
         <div class="intro">$Content</div>
         <div class="links">
@@ -66,10 +66,14 @@ var APP = 'DefApp';
 
 <script type="text/template" id="productsViewTemplate">
   {{ _.each(products.edges, function(product, index) { }}
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 nopadding">
       <div class="product-view">
         <a href="{$BaseHref}products/product/{{= product.node.handle }}">
-        <div class="image"><img src="{{= product.node.images.edges[0].node.src }}"></div>
+        <div class="image">
+        {{ if (product.node.images.edges.length) { }}
+          <img src="{{= product.node.images.edges[0].node.src }}">
+        {{ } }}
+        </div>
         {{ if (!product.node.variants.edges[0].node.availableForSale) { }}
           <div class="sold-out-container">
             <div class="sold-out"><img src="static-assets/images/sold_out.png"></div>

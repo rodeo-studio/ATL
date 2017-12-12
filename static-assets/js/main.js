@@ -14,7 +14,9 @@ require.config({
     modernizr: 'libs/modernizr-custom',
     imageScale: 'libs/image-scale.min',
     imagesLoaded: 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min',
+    visible: 'libs/jquery.visible.min',
     parallax: 'libs/parallax.min',
+    macy: 'libs/macy',
     cookie: 'libs/js.cookie'
   },
   shim: {
@@ -28,6 +30,9 @@ require.config({
     'imagesLoaded': {
       deps: ['jquery'],
       exports: 'imagesLoaded'
+    },
+    'visible' : {
+      deps: ['jquery']
     },
     'parallax' : {
       deps: ['jquery']

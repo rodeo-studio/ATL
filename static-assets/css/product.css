@@ -15,9 +15,9 @@
 }
 
 .product-detail-view .back-nav {
-  padding: 50px 0 0 0;
+  padding: 48px 0 0 0;
   font-family: 'inconsolatabold';
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .product-detail-view .back-link {
@@ -58,6 +58,12 @@
 }
 .product-detail-view .cart-btns .qty-selector .btn-qty:hover {
   cursor: pointer;
+}
+
+.product-detail-view .cart-btns .qty-selector .qty {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
 }
 
 .product-detail-view .cart-btns .btn {
@@ -148,15 +154,90 @@
   line-height: 1.3em;
 }
 
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .product-detail-view {
+    padding: 124px 42px 60px 42px;
+    text-align: left;
+  }
+
+  .product-detail-view .title  {
+    padding: 12px 0 48px 0;
+  }
+
+  .product-detail-view .price-details .price {
+    font-size: 1.3em;
+  }
+
+  .product-detail-view .price-details .min {
+    padding-top: 4px;
+  }
+
+  .product-detail-view .image {
+    padding: 0 68px 0 0;
+    text-align: right;
+    height: 580px;
+  }
+
+  .product-detail-view .description {
+    padding: 48px 0 28px 0;
+  }
+
+  .product-detail-view .description table {
+    margin: 32px 0 0 0;
+  }
+
+  .product-detail-view .cart-btns {
+    padding: 18px 0 38px 0;
+  }
+
+  .product-detail-view .description h1 {
+    padding: 30px 0 4px 0;
+    font-size: 1.3em;
+  }
 }
 
 /* Small devices (tablets, 992px and up) */
 @media (min-width: 992px) {
+  .product-detail-view {
+    padding: 124px 140px 60px 140px;
+  }
+
+  .product-detail-view .title h1 {
+    font-size: 3em;
+  }
+
+  .product-detail-view .description {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .product-detail-view {
+    padding: 124px 206px 60px 206px;
+  }
+
+  .product-detail-view .image {
+    padding: 0 162px 0 0;
+    height: 636px;
+  }
+
+  .product-detail-view .title h1 {
+    font-size: 3.9em;
+  }
+
+  .product-detail-view .price-details .price {
+    font-size: 1.5em;
+  }
+
+  .product-detail-view .price-details .min {
+    padding-top: 8px;
+    font-size: 1.2em;
+  }
+
+  .product-detail-view .description {
+    font-size: 1.2em;
+  }
 }
