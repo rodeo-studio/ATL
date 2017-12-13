@@ -12,6 +12,7 @@ require.config({
     async: 'libs/async',
     bootstrap: 'libs/bootstrap.min',
     modernizr: 'libs/modernizr-custom',
+    moment: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min',
     imageScale: 'libs/image-scale.min',
     imagesLoaded: 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min',
     visible: 'libs/jquery.visible.min',

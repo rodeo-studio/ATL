@@ -3,7 +3,7 @@
 <head>
 <% base_tag %>
 <% include GetIncludes %>
-<link href='static-assets/css/journal.css' rel='stylesheet' />
+<link href='static-assets/css/journals.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -26,81 +26,23 @@ var APP = 'DefApp';
     <div id="content" class="content clearfix">
       <div class="journal-detail-view">
         <div id="macy-container">
+        <% control Journal %>
           <div class="journal-post">
             <div class="post-container">
-              <a href="">
+              <a href="{$Link}">
               <div class="image-container">
-                <img src="static-assets/images/temp_journal1.jpg" alt="">
+                <img src="{$HeroImage.URL}" alt="">
                 <div class="overlay"></div>
               </div>
               <div class="content">
-              <h1>Story Headline</h1>
-              Atumqui doloria derum laborun totatur soluptatur. Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut.
+              <h1>{$MenuTitle}</h1>
+              $Synopsis
               <div class="link">Read More</div>
               </div>
               </a>
             </div>
           </div>
-          <div class="journal-post">
-            <div class="post-container">
-              <a href="">
-              <div class="image-container">
-                <img src="static-assets/images/temp_journal5.jpg" alt="">
-                <div class="overlay"></div>
-              </div>
-              <div class="content">
-              <h1>Story Headline</h1>
-              Atumqui doloria derum laborun totatur soluptatur. Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut.
-              <div class="link">Read More</div>
-              </div>
-              </a>
-            </div>
-          </div>
-          <div class="journal-post">
-            <div class="post-container">
-              <a href="">
-              <div class="image-container">
-                <img src="static-assets/images/temp_journal2.jpg" alt="">
-                <div class="overlay"></div>
-              </div>
-              <div class="content">
-              <h1>Story Headline</h1>
-              Atumqui doloria derum laborun totatur soluptatur. Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut.
-              <div class="link">Read More</div>
-              </div>
-              </a>
-            </div>
-          </div>
-          <div class="journal-post">
-            <div class="post-container">
-              <a href="">
-              <div class="image-container">
-                <img src="static-assets/images/temp_journal3.jpg" alt="">
-                <div class="overlay"></div>
-              </div>
-              <div class="content">
-              <h1>Story Headline</h1>
-              Atumqui doloria derum laborun totatur soluptatur. Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut.
-              <div class="link">Read More</div>
-              </div>
-              </a>
-            </div>
-          </div>
-          <div class="journal-post">
-            <div class="post-container">
-              <a href="">
-              <div class="image-container">
-                <img src="static-assets/images/temp_journal4.jpg" alt="">
-                <div class="overlay"></div>
-              </div>
-              <div class="content">
-              <h1>Story Headline</h1>
-              Atumqui doloria derum laborun totatur soluptatur. Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut.
-              <div class="link">Read More</div>
-              </div>
-              </a>
-            </div>
-          </div>
+        <% end_control %>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 <?php
 class JournalHolderPage extends Page {
+  static $allowed_children = array("JournalPage");
 
   private static $db = array(
   );
@@ -26,5 +27,13 @@ class JournalHolderPage_Controller extends Page_Controller {
 
   public function init() {
     parent::init();
+
+    $this->Journal = DataObject::get( 
+    $callerClass = "JournalPage", 
+    $filter = "", 
+    $sort = "",
+    $join = "",
+    $limit = "" 
+    );
   }
 }

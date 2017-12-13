@@ -91,15 +91,6 @@
   height: 100%;
 }
 
-.product-detail-view .break {
-  width: 100%;
-  height: 5px;
-  background: url("../images/break_line.png") repeat-x;
-}
-.product-detail-view .break.light {
-  background: url("../images/break_line_light.png") repeat-x;
-}
-
 .product-detail-view .description {
   padding: 48px 14px;
 }

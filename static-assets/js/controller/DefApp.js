@@ -9,6 +9,7 @@ define([
   'modernizr',
   'imageScale',
   'views/HeroSlideView',
+  'moment',
   'visible',
   'parallax',
   'macy',
@@ -16,7 +17,7 @@ define([
   'views/ProductsView',
   'views/ProductView',
   'views/CartView'
-], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, visible, parallax, Macy, cookie, ProductsView, ProductView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, moment, visible, parallax, Macy, cookie, ProductsView, ProductView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -222,6 +223,18 @@ define([
     $('img.scale').imageScale({'rescaleOnResize': true});
 
     handleResize();
+
+    $('.moment').each(function(){
+      var strFormat = 'do MMMM YYYY';
+      if ($(this).hasClass('day_month')) {
+        strFormat = 'do MMMM'
+      }
+      if ($(this).hasClass('year')) {
+        strFormat = 'YYYY'
+      }
+      $(this).html(moment($(this).html()).format(strFormat));
+      $(this).show();
+    });
 
     if ($('.hero-container').length) {
       $('.hero-container').show();
