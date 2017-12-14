@@ -10,7 +10,7 @@
 }
 
 .warning-view .element-container {
-  padding: 30px 12px;
+  padding: 66px 12px 58px 12px;
 }
 
 .warning-view .title {
@@ -51,6 +51,8 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .warning-view .element-container {
-    padding: 98px 338px;
+    padding: 98px 0;
+    width: 768px;
+    margin: 0 auto;
   }
 }

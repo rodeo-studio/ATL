@@ -131,7 +131,7 @@ img.scale {
 }
 
 #menu-btn {
-  width: 30px;
+  width: 24px;
   height: 25px;
   position: relative;
   -webkit-transform: rotate(0deg);
@@ -201,7 +201,7 @@ img.scale {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: -3px;
+  top: 0px;
   left: 8px;
 }
 
@@ -215,7 +215,7 @@ img.scale {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 18px;
+  top: 17px;
   left: 8px;
 }
 
@@ -260,7 +260,7 @@ img.scale {
 #menu-overlay .menus li {
   font-family: 'ano_blackwide';
   text-transform: uppercase;
-  padding: 9px 42px;
+  padding: 8px 42px;
 }
 
 /* BREAKS */
@@ -365,7 +365,7 @@ img.scale {
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 20px 18px;
+  padding: 6px 18px 20px 18px;
 }
 
 .page-highlight-view .element-container .text .title {
@@ -399,7 +399,7 @@ img.scale {
   text-transform: uppercase;
   text-align: center;
   font-size: 2.5em;
-  line-height: 1.3em;
+  line-height: 1em;
 }
 
 /* FEATURE PHOTO VIEW */
@@ -610,7 +610,7 @@ img.scale {
   }
 
   #menu-overlay .menus li {
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
   .hero .strap .logo {
@@ -640,6 +640,7 @@ img.scale {
   .quote-view {
     padding: 0 122px 104px 122px;
     font-size: 3.2em;
+    line-height: 1.2em;
   }
 
   .feature-photo-view .feature-caption {
@@ -695,7 +696,7 @@ img.scale {
   }
 
   #menu-overlay .menus li {
-    padding: 10px 0;
+    padding: 6px 0;
   }
 
   .hero .strap .logo {
@@ -710,6 +711,10 @@ img.scale {
     padding: 0 8px 0 8px;
   }
 
+  .page-highlight-view .element-container .text {
+    padding: 4px 20px 20px 20px;
+  }
+
   .page-highlight-view .element-container .text .title {
     font-size: 2.4em;
   }
@@ -717,6 +722,7 @@ img.scale {
   .quote-view {
     padding: 0 138px 124px 138px;
     font-size: 4em;
+    line-height: 1.1em;
   }
 
   .feature-photo-view .image-window,
@@ -780,9 +786,14 @@ img.scale {
     padding: 0 8px 0 8px;
   }
 
+  .page-highlight-view .element-container .text {
+    padding: 22px 220px 20px 40px;
+  }
+
   .quote-view {
     padding: 0 266px 354px 266px;
     font-size: 5.8em;
+    line-height: 1.2em;
   }
 
   .feature-photo-view .feature-caption {
@@ -790,7 +801,9 @@ img.scale {
   }
 
   .page-extra-highlight-view {
-    padding: 136px 182px 152px 182px;
+    padding: 136px 0 152px 0;
+    width: 932px;
+    margin: 0 auto;
   }
 
   .page-extra-highlight-view .element-container {
