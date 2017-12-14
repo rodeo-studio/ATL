@@ -309,6 +309,11 @@ img.scale {
   width: 100%;
   text-align: center;
   padding: 0 12px;
+
+  font-family: 'ano_blackwide';
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 3.3em;
 }
 
 .hero .strap .logo {
@@ -613,6 +618,10 @@ img.scale {
     padding: 10px 0;
   }
 
+  .hero .strap {
+    font-size: 5em;
+  }
+
   .hero .strap .logo {
     width: 450px;
   }
@@ -641,6 +650,11 @@ img.scale {
     padding: 0 122px 104px 122px;
     font-size: 3.2em;
     line-height: 1.2em;
+  }
+
+  .feature-photo-view .image-window,
+  .feature-photo-view .parallax-window {
+    min-height: 342px;
   }
 
   .feature-photo-view .feature-caption {
@@ -699,6 +713,10 @@ img.scale {
     padding: 6px 0;
   }
 
+  .hero  .strap {
+    font-size: 5.7em;
+  }
+
   .hero .strap .logo {
     width: 312px;
   }
@@ -727,7 +745,7 @@ img.scale {
 
   .feature-photo-view .image-window,
   .feature-photo-view .parallax-window {
-    min-height: 646px;
+    min-height: 446px;
   }
 
   .feature-photo-view .feature-caption {
@@ -791,9 +809,14 @@ img.scale {
   }
 
   .quote-view {
-    padding: 0 266px 354px 266px;
+    padding-bottom: 354px;
     font-size: 5.8em;
     line-height: 1.2em;
+  }
+
+  .feature-photo-view .image-window,
+  .feature-photo-view .parallax-window {
+    min-height: 646px;
   }
 
   .feature-photo-view .feature-caption {

@@ -6,7 +6,7 @@
   <div class="menus">
   <ul>
     <li><a href="{$BaseHref}products">Wines</a></li>
-    <li><a href="{$BaseHref}">About Us</a></li>
+    <li><a href="{$BaseHref}about">About Us</a></li>
     <li><a href="{$BaseHref}journal">Journal</a></li>
     <li><a href="{$BaseHref}">Vineyards &amp; Growers</a></li>
     <li><a href="{$BaseHref}">Contact</a></li>

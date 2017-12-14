@@ -1,0 +1,158 @@
+.top-logo .black {
+  display: none;
+}
+
+.top-logo .white {
+  display: block;
+}
+
+/* ABOUT DETAIL VIEW */
+/******************************************/
+.about-detail-view {
+  padding-bottom: 56px;
+}
+
+/* ABOUT TEXT VIEW */
+/******************************************/
+.about-text-view {
+  padding: 66px 38px;
+  color: #000;
+}
+.about-text-view.dark-background {
+  background-color: #f7f6f4;
+}
+
+.about-text-view u {
+  font-weight: bold;
+}
+
+/* QUOTE VIEW */
+/******************************************/
+.quote-view {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #000;
+}
+
+.quote-view .attribution {
+  padding-top: 52px;
+  font-size: 0.55em;
+}
+
+/* ABOUT PHOTO VIEW */
+/******************************************/
+.about-photo-view {
+  padding: 0 15px;
+}
+
+.about-photo-view .image-window {
+  min-height: 282px;
+  background-position: center;
+}
+
+.about-photo-view .about-caption {
+  padding: 8px 15px;
+  color: #2E2E2E;
+  font-size: 0.8em;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .about-detail-view {
+    padding-bottom: 98px;
+  }
+
+  .about-text-view {
+    padding: 104px 80px 80px 80px;
+    font-size: 1.2em;
+  }
+
+  .about-text-view p {
+    -webkit-column-break-inside: avoid;
+  }
+
+  .about-text-view.text-cols {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 38px;
+    -moz-column-gap: 38px;
+    column-gap: 38px;
+  }
+
+  .quote-view {
+    padding-top: 104px;
+    padding-bottom: 80px;
+  }
+
+  .quote-view .attribution {
+    padding-top: 6px;
+  }
+
+  .about-photo-view {
+    padding: 0;
+  }
+  .about-photo-view.small-photo {
+    padding-left: 104px;
+    padding-right: 104px;
+  }
+
+  .about-photo-view .image-window {
+    min-height: 342px;
+  }
+
+  .about-photo-view .about-caption {
+    padding: 8px 20px;
+    font-size: 1em;
+  }
+}
+
+/* Small devices (tablets, 992px and up) */
+@media (min-width: 992px) {
+  .about-detail-view {
+    padding-bottom: 148px;
+  }
+
+  .quote-view {
+    padding-top: 114px;
+    padding-bottom: 110px;
+  }
+
+  .about-photo-view.small-photo {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+
+  .about-photo-view .image-window {
+    min-height: 446px;
+  }
+
+  .about-photo-view .about-caption {
+    padding: 8px 30px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .about-detail-view {
+    padding-bottom: 172px;
+  }
+
+  .quote-view {
+    padding-top: 164px;
+    padding-bottom: 140px;
+  }
+
+  .about-photo-view.small-photo {
+    padding-left: 184px;
+    padding-right: 184px;
+  }
+
+  .about-photo-view .image-window {
+    min-height: 646px;
+  }
+
+  .about-photo-view .about-caption {
+    padding: 8px 50px;
+  }
+}

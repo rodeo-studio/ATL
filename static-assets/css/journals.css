@@ -6,15 +6,6 @@
   display: block;
 }
 
-/* JOURNAL VIEW */
-/******************************************/
-.journal-view .strap {
-  font-family: 'ano_blackwide';
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 3.3em;
-}
-
 /* JOURNAL DETAIL VIEW */
 /******************************************/
 .journal-detail-view {
@@ -80,10 +71,6 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .journal-view .strap {
-    font-size: 5em;
-  }
-
   .journal-detail-view {
     padding: 66px 68px 60px 68px;
   }
@@ -106,10 +93,6 @@
 
 /* Small devices (tablets, 992px and up) */
 @media (min-width: 992px) {
-  .journal-view .strap {
-    font-size: 5.7em;
-  }
-
   .journal-detail-view {
     padding: 54px 16px 60px 16px;
   }
