@@ -274,6 +274,50 @@ img.scale {
   background: url("../images/break_line_light.png") repeat-x;
 }
 
+/* CART */
+/******************************************/
+.cart .btn {
+  height: 34px;
+  color: #FFF;
+  background: #000;
+  border-radius: 0;
+}
+.cart .btn.primary-btn {
+  background: #84754E;
+}
+
+.cart .link {
+  text-transform: uppercase;
+  color: #84754E;
+}
+.cart .link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.cart .qty-selector {
+  margin: 0 8px 0 0;
+  vertical-align: top;
+  display: inline-block;
+  border: 1px solid #000;
+  height: 34px;
+  line-height: 34px;
+  font-size: 1.2em;
+}
+
+.cart .qty-selector .btn-qty {
+  padding: 0 6px;
+}
+.cart .qty-selector .btn-qty:hover {
+  cursor: pointer;
+}
+
+.cart .qty-selector .qty {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
 /* HERO */
 /******************************************/
 .hero {

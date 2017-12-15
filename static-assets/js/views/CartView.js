@@ -5,15 +5,13 @@ define([
 
   var CartView = Backbone.View.extend({
     initialize: function(options){
-      this.template = _.template($('#cartViewTemplate').text());
-
       this.options = options;
     },
 
     create: function(){
       var self = this;
 
-      var strQuery = "mutation { checkoutCreate(input: {}) { checkout { id webUrl lineItems(first: 5) { edges { node { title quantity } } } } } }";
+      var strQuery = "mutation { checkoutCreate(input: {}) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { title quantity variant { price } } } } } } }";
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -37,7 +35,7 @@ define([
     load: function(cartID){
       var self = this;
 
-      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [], checkoutId: "' + cartID + '" ) { checkout { id webUrl lineItems(first: 5) { edges { node { id title quantity } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -56,7 +54,9 @@ define([
     },
 
     add: function(cartID, productID, nQty){
-      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id webUrl lineItems(first:2) { edges { node { id title quantity } } } } } }';
+      console.log(nQty);
+
+      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -75,7 +75,7 @@ define([
     },
 
     update: function(cartID, productID, nQty){
-      var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id webUrl lineItems(first:2) { edges { node { id title quantity } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -94,7 +94,7 @@ define([
     },
 
     remove: function(cartID, productID){
-      var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id webUrl lineItems(first:2) { edges { node { id title quantity } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -112,7 +112,9 @@ define([
       });
     },
 
-    render: function(jsonCart){
+    render: function(jsonCart, elContainer, elTemplate){
+      var template = _.template(elTemplate.text());
+
       var self = this;
 
       // store total qty
@@ -123,16 +125,39 @@ define([
 
       // only show if we have something in the cart
       if (nQty) {
-        $(this.el).show();
+        elContainer.show();
       }
 
-      $(this.el).html(this.template({ cart: jsonCart, cartQty: nQty }));
+      elContainer.html(template({ cart: jsonCart, cartQty: nQty }));
+
+      $('.item .btn-increment-cart-item-qty', $(this).el).click(function(evt){
+        // get cart
+        var elCart = $(this).closest('.cart');
+        // get qty
+        var elQtySelector = $(this).closest('.qty-selector');
+        var nQty = Number($('.qty', elQtySelector).html()) + 1;
+
+        // fire event
+        app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'), nQty);
+      });
+
+      $('.item .btn-decrement-cart-item-qty', $(this).el).click(function(evt){
+        // get cart
+        var elCart = $(this).closest('.cart');
+        // get qty
+        var elQtySelector = $(this).closest('.qty-selector');
+        var nQty = Number($('.qty', elQtySelector).html()) - 1;
+        if (nQty >= 1) {
+          // fire event
+          app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'), nQty);
+        }
+      });
 
       $('.item .btn-update-cart-item-qty', $(this).el).click(function(evt){
         // get cart
         var elCart = $(this).closest('.cart');
         // fire event
-        app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'));
+        app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'), 5);
       });
 
       $('.item .btn-remove-cart-item', $(this).el).click(function(evt){

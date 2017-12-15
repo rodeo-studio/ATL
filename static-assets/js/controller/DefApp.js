@@ -16,7 +16,7 @@ define([
   'cookie',
   'views/ProductsView',
   'views/ProductView',
-  'views/CartView'
+  'views/CartView',
 ], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, moment, visible, parallax, Macy, cookie, ProductsView, ProductView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
@@ -134,23 +134,29 @@ define([
     }
 
     function onCartLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsAdd);
+      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
+      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      // for the parallax
+      jQuery(window).trigger('resize').trigger('scroll');
     }
 
     function onCartItemAddedLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsAdd);
+      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
+      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
     }
 
     function onCartItemUpdatedQtyLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsUpdate);
+      cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-view'), $('#cartViewTemplate'));
+      cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
     }
 
     function onCartItemUpdatedRemoveLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsRemove);
+      cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-view'), $('#cartViewTemplate'));
+      cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
     }
 
-    function onUpdateCartItemQty(cartID, productID) {
-      cartView.update(cartID, productID, 10);
+    function onUpdateCartItemQty(cartID, productID, nQty) {
+      cartView.update(cartID, productID, nQty);
     }
 
     function onRemoveCartItem(cartID, productID) {
@@ -160,9 +166,15 @@ define([
     // do we want to update header colour on scroll?
     if ($('body.header-colour-toggle').length) {
       $(window).scroll(function() {
+        $('.top-logo .black').hide();
+        $('.top-logo .white').show();
+
         $('.cart-menu').removeClass('dark');
         $('.main-menu').removeClass('dark');
         if ($(document).scrollTop() > (nHeroHeight - 50)) {
+          $('.top-logo .black').show();
+          $('.top-logo .white').hide();
+
           $('.cart-menu').addClass('dark');
           $('.main-menu').addClass('dark');
         }
@@ -207,7 +219,7 @@ define([
       });
     }
 
-    var cartView = new CartView({ el: '#cart-view' });
+    var cartView = new CartView();
 
     var cartCookie = getCartCookie();
     if (cartCookie != undefined) {

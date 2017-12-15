@@ -6,7 +6,7 @@
 <link href='static-assets/css/about.css' rel='stylesheet' />
 </head>
 
-<body>
+<body class="header-colour-toggle">
 <script>
 var APP = 'DefApp';
 </script>

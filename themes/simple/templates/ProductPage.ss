@@ -41,9 +41,9 @@ var PRODUCT_ID = '{$ProductID}';
       <div class="price">${{= variants.edges[0].node.price }}/bottle</div>
       <div class="min">(minimum 6 per order)</div>
     </div>
-    <div class="cart-btns">
+    <div class="cart cart-btns">
       <div class="qty-selector">
-        <span class="btn-qty btn-less">-</span><span class="qty" data-min-qty="6" data-qty-inc="6" data-qty="6">6</span><span class="btn-qty btn-more">+</span>
+        <span class="btn-qty btn-less">-</span><span class="qty" data-min-qty="1" data-qty-inc="1" data-qty="1">1</span><span class="btn-qty btn-more">+</span>
       </div><span class="btn btn-add-to-cart" data-id="{{= variants.edges[0].node.id }}">Add to Cart</span>
     </div>
     <div class="break light"></div>
