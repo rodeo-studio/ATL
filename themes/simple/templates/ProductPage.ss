@@ -18,7 +18,6 @@ var PRODUCT_ID = '{$ProductID}';
       <div class="product-detail-view clearfix">
         <div id="product-detail-view" class="clearfix"></div>
       </div>
-
       <% include DisplayFooter %>
     </div>
   </div>
@@ -37,15 +36,30 @@ var PRODUCT_ID = '{$ProductID}';
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 nopadding">
     <div class="hidden-lg hidden-md hidden-sm break"></div>
     <div class="title"><h1>{{= title }}</h1></div>
-    <div class="price-details">
-      <div class="price">${{= variants.edges[0].node.price }}/bottle</div>
-      <div class="min">(minimum 6 per order)</div>
-    </div>
-    <div class="cart cart-btns">
-      <div class="qty-selector">
-        <span class="btn-qty btn-less">-</span><span class="qty" data-min-qty="1" data-qty-inc="1" data-qty="1">1</span><span class="btn-qty btn-more">+</span>
-      </div><span class="btn btn-add-to-cart" data-id="{{= variants.edges[0].node.id }}">Add to Cart</span>
-    </div>
+    {{ if (variants.edges[0].node.availableForSale) { }}
+      {{ if (variants.edges[0].node.title == 'Default Title') { }}
+        <div class="price-details">
+          <div class="price">${{= variants.edges[0].node.price }}/bottle
+          </div>
+          <div class="min">(minimum 6 per order)</div>
+        </div>
+      {{ } else { }}
+        <div class="price-details">
+          <div class="price">${{= variants.edges[0].node.price }}
+          </div>
+        </div>
+      {{ } }}
+      <div class="cart cart-btns">
+        <div class="qty-selector">
+          <span class="btn-qty btn-less">-</span><span class="qty" data-min-qty="1" data-qty-inc="1" data-qty="1">1</span><span class="btn-qty btn-more">+</span>
+        </div><span class="btn btn-add-to-cart" data-id="{{= variants.edges[0].node.id }}">Add to Cart</span>
+      </div>
+    {{ } else { }}
+      <div class="cart cart-btns">
+        <div class="sold-out">Sold out</div>
+      </div>
+
+    {{ } }}
     <div class="break light"></div>
     <div class="description">{{= descriptionHtml }}</div>
 

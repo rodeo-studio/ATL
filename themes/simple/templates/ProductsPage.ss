@@ -24,7 +24,7 @@ var APP = 'DefApp';
       </div>
 
       <div class="products-view clearfix">
-        <div id="products-view"></div>
+        <div id="products-view" class="flex-grid"></div>
       </div>
 
       <div class="feature-photo-view clearfix">

@@ -190,6 +190,7 @@ define([
       productsView = new ProductsView({ el: '#products-view' });
       productsView.load('');
 //      productsView.load('White');
+//      productsView.load('Red');
     }
 
     if ($('#product-detail-view').length) {

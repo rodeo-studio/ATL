@@ -13,9 +13,9 @@ define([
     load: function(strQueryType){
       var self = this;
 
-      var strQuery = '{ shop { products(first: 10) { edges { node { id handle title variants(first: 10) { edges { node { id price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
+      var strQuery = '{ shop { products(first: 100) { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
       if (strQueryType != '') {
-        strQuery = '{ shop { products(first: 10, query:"product_type:' + strQueryType + '") { edges { node { id handle title variants(first: 10) { edges { node { id price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
+        strQuery = '{ shop { products(first: 100, query:"product_type:' + strQueryType + '") { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
       }
 
       $.ajax({

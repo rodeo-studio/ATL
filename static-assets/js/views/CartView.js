@@ -1,3 +1,6 @@
+var DEFAULT_SHOPIFY_VARIANT_TITLE = 'Default Title';
+var MINIMUM_ITEM_QTY = 6;
+
 define([
   'underscore', 
   'backbone'
@@ -11,16 +14,13 @@ define([
     create: function(){
       var self = this;
 
-      var strQuery = "mutation { checkoutCreate(input: {}) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { title quantity variant { price } } } } } } }";
+      var strQuery = "mutation { checkoutCreate(input: {}) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { title quantity variant { title price } } } } } } }";
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
         datatype: 'json',
         data: strQuery,
         success: function(response) {
-          console.log(response);
-          console.log(response.data.checkoutCreate.checkout.id);
-
           // fire event
           app.dispatcher.trigger("CartView:created", response.data.checkoutCreate.checkout.id);
         },
@@ -35,7 +35,7 @@ define([
     load: function(cartID){
       var self = this;
 
-      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -56,7 +56,7 @@ define([
     add: function(cartID, productID, nQty){
       console.log(nQty);
 
-      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -75,7 +75,7 @@ define([
     },
 
     update: function(cartID, productID, nQty){
-      var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -94,7 +94,7 @@ define([
     },
 
     remove: function(cartID, productID){
-      var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { price } } } } } } }';
+      var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -117,10 +117,14 @@ define([
 
       var self = this;
 
-      // store total qty
-      var nQty = 0;
+      // store total qty and check cart is valid
+      var bCartValid = true, nQty = 0;
       $.each(jsonCart.checkout.lineItems.edges, function(key, item){
         nQty += item.node.quantity;
+        // is this item valid?
+        if (item.node.variant.title == DEFAULT_SHOPIFY_VARIANT_TITLE && item.node.quantity < MINIMUM_ITEM_QTY) {
+          bCartValid = false;
+        }
       });
 
       // only show if we have something in the cart
@@ -128,9 +132,14 @@ define([
         elContainer.show();
       }
 
-      elContainer.html(template({ cart: jsonCart, cartQty: nQty }));
+      elContainer.html(template({ cart: jsonCart, cartQty: nQty, cartValid: bCartValid }));
 
-      $('.item .btn-increment-cart-item-qty', $(this).el).click(function(evt){
+      $('.cart-invalid', elContainer).hide();
+      if (!bCartValid) {
+        $('.cart-invalid', elContainer).show();
+      }
+
+      $('.item .btn-increment-cart-item-qty', elContainer).click(function(evt){
         // get cart
         var elCart = $(this).closest('.cart');
         // get qty
@@ -141,7 +150,7 @@ define([
         app.dispatcher.trigger("CartView:updateCartItemQty", elCart.attr('data-id'), $(this).attr('data-id'), nQty);
       });
 
-      $('.item .btn-decrement-cart-item-qty', $(this).el).click(function(evt){
+      $('.item .btn-decrement-cart-item-qty', elContainer).click(function(evt){
         // get cart
         var elCart = $(this).closest('.cart');
         // get qty

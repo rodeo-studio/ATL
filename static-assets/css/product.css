@@ -43,6 +43,13 @@
   padding: 14px 0 32px 0;
 }
 
+.product-detail-view .cart-btns .sold-out {
+  display: inline-block;
+  padding: 10px;
+  color: #84754E;
+  border: 1px solid #84754E;
+}
+
 .product-detail-view .title  {
   padding: 30px 0 38px 0;
 }
@@ -92,10 +99,6 @@
 .product-detail-view .description  table td {
   vertical-align: top;
   padding: 4px 0 4px 0;
-}
-
-.product-detail-view .description strong {
-  font-family: 'inconsolatabold';
 }
 
 .product-detail-view .description em {

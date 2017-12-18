@@ -13,7 +13,7 @@ define([
     load: function(strProductHandle){
       var self = this;
 
-      var strQuery = '{ shop { productByHandle(handle: "' + strProductHandle + '") { id handle title descriptionHtml variants(first: 10) { edges { node { id price availableForSale } } } images(first: 1) { edges { node { id src } } } } } }';
+      var strQuery = '{ shop { productByHandle(handle: "' + strProductHandle + '") { id handle title descriptionHtml variants(first: 10) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
         type: 'POST',
@@ -21,6 +21,7 @@ define([
         data: strQuery,
         success: function(response) {
           self.product = response.data.shop.productByHandle;
+          console.log(self.product);
           // fire event
           app.dispatcher.trigger("ProductView:loaded", self);
         },
