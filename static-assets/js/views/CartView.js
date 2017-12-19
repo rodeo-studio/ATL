@@ -120,10 +120,12 @@ define([
       // store total qty and check cart is valid
       var bCartValid = true, nQty = 0;
       $.each(jsonCart.checkout.lineItems.edges, function(key, item){
+        item.valid = true;
         nQty += item.node.quantity;
         // is this item valid?
         if (item.node.variant.title == DEFAULT_SHOPIFY_VARIANT_TITLE && item.node.quantity < MINIMUM_ITEM_QTY) {
           bCartValid = false;
+          item.valid = false;
         }
       });
 
@@ -131,13 +133,11 @@ define([
       if (nQty) {
         elContainer.show();
       }
+      else {
+        bCartValid = false;
+      }
 
       elContainer.html(template({ cart: jsonCart, cartQty: nQty, cartValid: bCartValid }));
-
-      $('.cart-invalid', elContainer).hide();
-      if (!bCartValid) {
-        $('.cart-invalid', elContainer).show();
-      }
 
       $('.item .btn-increment-cart-item-qty', elContainer).click(function(evt){
         // get cart

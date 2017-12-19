@@ -66,6 +66,10 @@
   border-bottom: 1px solid #f5f5f5;
 }
 
+.cart-detail-view .item.invalid  .qty-selector {
+  border: 1px solid #CC0000;
+}
+
 .cart-detail-view .item .title{
   padding-right: 32px;
 }
