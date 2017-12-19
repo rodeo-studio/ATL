@@ -357,16 +357,19 @@ img.scale {
 }
 
 .hero .strap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   width: 100%;
   text-align: center;
   padding: 0 12px;
-
   font-family: 'ano_blackwide';
   text-transform: uppercase;
   font-weight: normal;
   font-size: 3.3em;
+  line-height: 1.3em;
 }
 
 .hero .strap .logo {

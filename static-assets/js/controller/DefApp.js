@@ -92,7 +92,6 @@ define([
         nHeroHeight = nWindowHeight;
         $('.hero').css('height', nHeroHeight);
         $('.hero .strap').css('height', nHeroHeight);
-        $('.hero .strap').css('line-height', nHeroHeight + 'px');
       }
 
       if ($('#menu-overlay').hasClass('open')) {
@@ -187,10 +186,18 @@ define([
     });
 
     if ($('#products-view').length) {
+      function selectType(elType) {
+        $('.products-intro-view .link').removeClass('active');
+        elType.addClass('active');
+        productsView.load(elType.attr('data-id'));
+      }
+
       productsView = new ProductsView({ el: '#products-view' });
-      productsView.load('');
-//      productsView.load('White');
-//      productsView.load('Red');
+      $('.products-intro-view .link').click(function(evt){
+        selectType($(this));
+      });
+      // select All
+      selectType($('.products-intro-view .link[data-id="All"]'));
     }
 
     if ($('#product-detail-view').length) {

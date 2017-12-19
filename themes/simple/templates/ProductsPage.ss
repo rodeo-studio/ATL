@@ -18,7 +18,7 @@ var APP = 'DefApp';
         <h1>$MenuTitle</h1>
         <div class="intro">$Content</div>
         <div class="links">
-          <span class="link">White</span> <span class="link">Red</span> <span class="link">Mixed Packs</span>
+          <span class="link" data-id="All">All</span> <span class="link" data-id="White">White</span> <span class="link" data-id="Red">Red</span> <span class="link" data-id="Mixed">Mixed Packs</span>
         </div>
         <div class="break"></div>
       </div>

@@ -46,6 +46,9 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
+.products-intro-view .link.active {
+  text-decoration: none;
+}
 
 .products-intro-view .break {
   width: 100%;

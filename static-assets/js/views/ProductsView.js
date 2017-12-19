@@ -14,7 +14,7 @@ define([
       var self = this;
 
       var strQuery = '{ shop { products(first: 100) { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
-      if (strQueryType != '') {
+      if (strQueryType != 'All') {
         strQuery = '{ shop { products(first: 100, query:"product_type:' + strQueryType + '") { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
       }
 
