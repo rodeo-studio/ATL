@@ -10,7 +10,7 @@
     <li><a href="{$BaseHref}journal">Journal</a></li>
     <li><a href="{$BaseHref}vineyards-and-growers">Vineyards &amp; Growers</a></li>
     <li><a href="{$BaseHref}contact">Contact</a></li>
-    <li><a href="{$BaseHref}">FAQ</a></li>
+    <li><a href="{$BaseHref}faqs">FAQ</a></li>
   </ul>
   </div>
 </div>

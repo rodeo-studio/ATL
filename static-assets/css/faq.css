@@ -1,0 +1,108 @@
+.cart-menu {
+  color: #000;
+}
+
+.main-menu #menu-btn span {
+  background: #000;
+}
+
+/* FAQ VIEW */
+/******************************************/
+.faq-view {
+  padding: 0 0 44px 0;
+}
+
+/* FAQ BLOCK VIEW */
+/******************************************/
+.faq-block-view {
+  padding: 78px 16px 24px 16px;
+  color: #000;
+  text-align: center;
+}
+
+.faq-block-view .break {
+  margin: 50px 0 30px 0;
+}
+
+.faq-block-view h1 {
+  font-size: 3.3em;
+}
+
+.faq-block-view h2 {
+  padding-bottom: 24px;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .faq-view {
+    padding: 10px 0 150px 0;
+  }
+
+  .faq-block-view {
+    padding: 116px 78px 24px 78px;
+  }
+
+  .faq-block-view h1 {
+    font-size: 5em;
+  }
+
+  .faq-block-view .text {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  .faq-block-view h2 {
+    font-size: 1.15em;
+  }
+}
+
+/* Small devices (tablets, 992px and up) */
+@media (min-width: 992px) {
+  .faq-view {
+    padding: 0px 0 150px 0;
+  }
+
+  .faq-block-view {
+    padding: 128px 110px 72px 110px;
+  }
+
+  .faq-block-view .break {
+    margin: 116px 0 42px 0;
+  }
+
+  .faq-block-view h1 {
+    font-size: 6em;
+  }
+
+  .faq-block-view .text {
+    font-size: 1.3em;
+  }
+
+  .faq-block-view h2 {
+    font-size: 1em;
+    padding-bottom: 32px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  .faq-view {
+    padding: 10px 0 200px 0;
+  }
+
+  .faq-block-view {
+    padding: 144px 278px 72px 278px;
+  }
+
+  .faq-block-view .break {
+    margin: 144px 0 42px 0;
+  }
+
+  .faq-block-view .text {
+    font-size: 1.5em;
+  }
+
+}
