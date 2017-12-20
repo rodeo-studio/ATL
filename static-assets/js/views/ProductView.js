@@ -21,7 +21,6 @@ define([
         data: strQuery,
         success: function(response) {
           self.product = response.data.shop.productByHandle;
-          console.log(self.product);
           // fire event
           app.dispatcher.trigger("ProductView:loaded", self);
         },

@@ -52,7 +52,7 @@ var PRODUCT_ID = '{$ProductID}';
       <div class="cart cart-btns">
         <div class="qty-selector">
           <span class="btn-qty btn-less">-</span><span class="qty" data-min-qty="1" data-qty-inc="1" data-qty="1">1</span><span class="btn-qty btn-more">+</span>
-        </div><span class="btn btn-add-to-cart" data-id="{{= variants.edges[0].node.id }}">Add to Cart</span>
+        </div><span class="btn btn-add-to-cart" data-id="{{= variants.edges[0].node.id }}">Add to cart</span>
       </div>
     {{ } else { }}
       <div class="cart cart-btns">

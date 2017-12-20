@@ -18,7 +18,7 @@ var APP = 'DefApp';
         <h1>$MenuTitle</h1>
         <div class="intro">$Content</div>
         <div class="links">
-          <span class="link" data-id="All">All</span> <span class="link" data-id="White">White</span> <span class="link" data-id="Red">Red</span> <span class="link" data-id="Mixed">Mixed Packs</span>
+          <span class="link" data-id="White">White</span> <span class="link" data-id="Red">Red</span> <span class="link" data-id="Mixed">Mixed Packs</span> <span class="link" data-id="All">All</span>
         </div>
         <div class="break"></div>
       </div>
@@ -27,10 +27,18 @@ var APP = 'DefApp';
         <div id="products-view" class="flex-grid"></div>
       </div>
 
-      <div class="feature-photo-view clearfix">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg"></div>
-        <div class="feature-caption">Caption to go here</div>
-      </div>
+      <% if BaseImage %>
+        <div class="feature-photo-view clearfix">
+          <% if BaseImageParallax %>
+            <div class="parallax-window" data-parallax="scroll" data-image-src="{$BaseImage.URL}"></div>
+          <% else %>
+            <div class="image-window" style="background-image: url('{$BaseImage.URL}')"></div>
+          <% end_if %>
+          <% if BaseImageCaption %>
+            <div class="feature-caption">{$BaseImageCaption}</div>
+          <% end_if %>
+        </div>
+      <% end_if %>
 
       <div class="page-extra-highlight-view clearfix">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">

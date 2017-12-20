@@ -88,12 +88,12 @@ img.scale {
   height: 19px;
 }
 
-.top-logo .white {
-  display: none;
+.top-logo .logo {
+  fill: #FFF;
+  width: 62px;
 }
-
-.top-logo img {
-  height: 100%;
+.top-logo.dark .logo {
+  fill: #000;
 }
 
 #cart-view {
@@ -454,7 +454,7 @@ img.scale {
 /* QUOTE VIEW */
 /******************************************/
 .quote-view {
-  padding: 0 16px 116px 16px;
+  padding: 0 16px 60px 16px;
   font-family: 'ano_blackwide';
   color: #84754E;
   text-transform: uppercase;
@@ -653,7 +653,10 @@ img.scale {
     position: fixed;
     top: 17px;
     left: 18px;
-    height: 17px;
+  }
+
+  .top-logo .logo {
+    width: 55px;
   }
 
   .cart-menu {
@@ -671,7 +674,7 @@ img.scale {
   }
 
   #menu-overlay .menus li {
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .hero .strap {
@@ -758,7 +761,10 @@ img.scale {
   .top-logo {
     top: 16px;
     left: 18px;
-    height: auto;
+  }
+
+  .top-logo .logo {
+    width: 70px;
   }
 
   #menu-overlay .menus {
@@ -845,7 +851,7 @@ img.scale {
   }
 
   #menu-overlay .menus li {
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
   .hero .strap .logo {

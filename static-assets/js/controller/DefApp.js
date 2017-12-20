@@ -165,14 +165,16 @@ define([
     // do we want to update header colour on scroll?
     if ($('body.header-colour-toggle').length) {
       $(window).scroll(function() {
-        $('.top-logo .black').hide();
-        $('.top-logo .white').show();
+        console.log('t');
+//        $('.top-logo .logo').addClass('white');
+        $('.top-logo').removeClass('dark');
 
         $('.cart-menu').removeClass('dark');
         $('.main-menu').removeClass('dark');
         if ($(document).scrollTop() > (nHeroHeight - 50)) {
-          $('.top-logo .black').show();
-          $('.top-logo .white').hide();
+          console.log('rem');
+//          $('.top-logo .logo').removeClass('white');
+          $('.top-logo').addClass('dark');
 
           $('.cart-menu').addClass('dark');
           $('.main-menu').addClass('dark');

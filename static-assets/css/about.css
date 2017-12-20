@@ -1,9 +1,5 @@
-.top-logo .black {
-  display: none;
-}
-
-.top-logo .white {
-  display: block;
+.top-logo .logo {
+  fill: #FFF;
 }
 
 /* ABOUT DETAIL VIEW */

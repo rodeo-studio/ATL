@@ -1,3 +1,7 @@
+.top-logo .logo {
+  fill: #000;
+}
+
 .cart-menu {
   color: #000;
 }
@@ -70,6 +74,7 @@
 
 .product-detail-view .description {
   padding: 48px 14px;
+  line-height: 1.5em;
 }
 
 .product-detail-view .description a,
@@ -96,9 +101,17 @@
   height: auto;
 }
 
-.product-detail-view .description  table td {
+.product-detail-view .description table tr:first-child td { 
+  padding-top: 10px; 
+}
+
+.product-detail-view .description table tr:last-child td { 
+  padding-bottom: 10px; 
+}
+
+.product-detail-view .description table td {
   vertical-align: top;
-  padding: 4px 0 4px 0;
+  padding: 0;
 }
 
 .product-detail-view .description em {
@@ -173,7 +186,6 @@
 
   .product-detail-view .description {
     font-size: 1.2em;
-    line-height: 1.3em;
   }
 }
 
