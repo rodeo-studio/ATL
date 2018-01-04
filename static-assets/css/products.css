@@ -2,8 +2,12 @@ body {
   background: #f2f1ed;
 }
 
-.top-logo .logo {
-  fill: #000;
+.top-logo .black {
+  display: block;
+}
+
+.top-logo .white {
+  display: none;
 }
 
 .cart-menu {
@@ -32,12 +36,12 @@ body {
 
 .products-intro-view .links {
   padding: 36px 0 24px 0;
-  font-size: 1.2em;
 }
 
 .products-intro-view .link {
+  color: #9B9B9B;
   padding: 0 7px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .products-intro-view .link:first-child {
   padding-left: 0;
@@ -48,16 +52,11 @@ body {
 
 .products-intro-view .link:hover {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .products-intro-view .link.active {
-  text-decoration: none;
-}
-
-.products-intro-view .break {
-  width: 100%;
-  height: 5px;
-  background: url("../images/break_line.png") repeat-x;
+  color: #000000;
+  text-decoration: underline;
 }
 
 /* PRODUCTS VIEW */
@@ -90,15 +89,15 @@ body {
   height: 100%;
 }
 
-.products-view .sold-out-container {
+.products-view .sticker-container {
   position: absolute;
-  top: 32px;
-  left: -32px;
+  top: 64px;
+  left: -34px;
   width: 100%;
 }
 
-.products-view .sold-out {
-  width: 62px;
+.products-view .sticker {
+  width: 68px;
   margin: 0 auto;
 }
 
@@ -137,9 +136,9 @@ body {
     height: 224px;
   }
 
-  .products-view .sold-out-container {
-    top: 48px;
-    left: -32px;
+  .products-view .sticker-container {
+    top: 78px;
+    left: -38px;
   }
 
   .products-view .title {
@@ -171,6 +170,11 @@ body {
     padding: 60px 108px 110px 108px;
   }
 
+  .products-view .sticker-container {
+    top: 60px;
+    left: -56px;
+  }
+
   .products-view .title {
     padding: 24px 0 0 0;
   }
@@ -196,7 +200,6 @@ body {
 
   .products-intro-view .links {
     padding: 62px 0 20px 0;
-    font-size: 1.4em;
   }
 
   .products-view {
@@ -214,9 +217,13 @@ body {
     height: 338px;
   }
 
-  .products-view .sold-out-container {
-    top: 100px;
-    left: -42px;
+  .products-view .sticker-container {
+    top: 140px;
+    left: -44px;
+  }
+
+  .products-view .sticker {
+    width: 78px;
   }
 
   .products-view .title {

@@ -26,36 +26,7 @@ var APP = 'DefApp';
     </div>
 
     <div id="content" class="content clearfix">
-      <div class="page-highlight-view clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page1.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Wines</div>
-                <div class="synopsis">
-                Sedit, volumquunt, voluptatem onsedis millenis acimo occatus atur suntemo dipicti bustis molorem volorer rorepuditem iniat quiam fugiti utecture.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page2.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">About Us</div>
-                <div class="synopsis">
-                Sedit, volumquunt, voluptatem onsedis millenis acimo occatus atur suntemo dipicti bustis molorem volorer rorepuditem iniat quiam fugiti utecture.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% include DisplayPageHighlights %>
 
       <div class="quote-view clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
@@ -63,35 +34,9 @@ var APP = 'DefApp';
         </div>
       </div>
 
-      <div class="feature-photo-view">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg"></div>
-        <div class="feature-caption">Caption to go here</div>
-      </div>
+      <% include DisplayFeaturePhoto %>
 
-      <div class="page-extra-highlight-view clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Journal</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Contact</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% include DisplayPageExtraHighlights %>
 
       <div class="warning-view clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">

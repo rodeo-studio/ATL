@@ -40,30 +40,7 @@ var APP = 'DefApp';
         </div>
       <% end_if %>
 
-      <div class="page-extra-highlight-view clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Journal</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Contact</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% include DisplayPageExtraHighlights %>
 
       <% include DisplayFooter %>
     </div>
@@ -83,8 +60,12 @@ var APP = 'DefApp';
         {{ } }}
         </div>
         {{ if (!product.node.variants.edges[0].node.availableForSale) { }}
-          <div class="sold-out-container">
-            <div class="sold-out"><img src="static-assets/images/sold_out.png"></div>
+          <div class="sticker-container">
+            <div class="sticker"><img src="static-assets/images/sold_out.svg"></div>
+          </div>
+       {{ } else if (product.node.variants.edges[0].node.price == 0) { }}
+          <div class="sticker-container">
+            <div class="sticker"><img src="static-assets/images/coming_soon.svg"></div>
           </div>
         {{ } }}
         <div class="title">{{= product.node.title }}</div>

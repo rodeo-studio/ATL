@@ -54,8 +54,6 @@ define([
     },
 
     add: function(cartID, productID, nQty){
-      console.log(nQty);
-
       var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,

@@ -1,5 +1,9 @@
-.top-logo .logo {
-  fill: #000;
+.top-logo .black {
+  display: block;
+}
+
+.top-logo .white {
+  display: none;
 }
 
 .cart-menu {

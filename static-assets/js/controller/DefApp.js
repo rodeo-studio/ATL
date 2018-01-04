@@ -13,11 +13,13 @@ define([
   'visible',
   'parallax',
   'macy',
+  'slick',
   'cookie',
   'views/ProductsView',
   'views/ProductView',
+  'views/ProductsExploreView',
   'views/CartView',
-], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, moment, visible, parallax, Macy, cookie, ProductsView, ProductView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, moment, visible, parallax, Macy, slick, cookie, ProductsView, ProductView, ProductsExploreView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -32,7 +34,7 @@ define([
     var nCurrSlide = 0;
     var bFirstResize = true;
     var nHeroHeight = 0;
-    var productsView = null, productView =null;
+    var productsView = null, productView = null, productsExploreView = null;
 
     app.dispatcher.on("HeroSlideView:ready", onHeroSlideViewReady);
 
@@ -40,6 +42,9 @@ define([
 
     app.dispatcher.on("ProductView:loaded", onProductLoaded);
     app.dispatcher.on("ProductView:addToCart", onProductAddToCart);
+
+    app.dispatcher.on("ProductsExploreView:loaded", onProductsExploreLoaded);
+    app.dispatcher.on("ProductsExploreView:addToCart", onProductAddToCart);
 
     app.dispatcher.on("CartView:created", onCartCreated);
     app.dispatcher.on("CartView:loaded", onCartLoaded);
@@ -128,6 +133,10 @@ define([
       productView.render();
     }
 
+    function onProductsExploreLoaded() {
+      productsExploreView.render();
+    }
+
     function onCartCreated(cartID) {
       setCartCookie(cartID);
     }
@@ -165,17 +174,13 @@ define([
     // do we want to update header colour on scroll?
     if ($('body.header-colour-toggle').length) {
       $(window).scroll(function() {
-        console.log('t');
-//        $('.top-logo .logo').addClass('white');
-        $('.top-logo').removeClass('dark');
-
+        $('.top-logo .white').show();
+        $('.top-logo .black').hide();
         $('.cart-menu').removeClass('dark');
         $('.main-menu').removeClass('dark');
         if ($(document).scrollTop() > (nHeroHeight - 50)) {
-          console.log('rem');
-//          $('.top-logo .logo').removeClass('white');
-          $('.top-logo').addClass('dark');
-
+          $('.top-logo .black').show();
+          $('.top-logo .white').hide();
           $('.cart-menu').addClass('dark');
           $('.main-menu').addClass('dark');
         }
@@ -205,6 +210,11 @@ define([
     if ($('#product-detail-view').length) {
       productView = new ProductView({ el: '#product-detail-view' });
       productView.load(PRODUCT_ID);
+    }
+
+    if ($('#products-explore-view').length) {
+      productsExploreView = new ProductsExploreView({ el: '#products-explore-view', strCurrProductHandle: PRODUCT_ID });
+      productsExploreView.load();
     }
 
     if ($('#macy-container').length) {

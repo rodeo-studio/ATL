@@ -1,6 +1,9 @@
+.top-logo .black {
+  display: block;
+}
 
-.top-logo .logo {
-  fill: #000;
+.top-logo .white {
+  display: none;
 }
 
 .cart-menu {
@@ -37,6 +40,10 @@
   padding-bottom: 24px;
   font-size: 1.2em;
   line-height: 1.3em;
+}
+
+.faq-block-view .text-block-view {
+  text-align: left;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -93,13 +100,14 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
   .faq-view {
+    margin: 0 auto;
     padding: 10px 0 200px 0;
+    width: 890px;
   }
 
   .faq-block-view {
-    padding: 144px 278px 72px 278px;
+    padding: 144px 0 72px 0;
   }
 
   .faq-block-view .break {

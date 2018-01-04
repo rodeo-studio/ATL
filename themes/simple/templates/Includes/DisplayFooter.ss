@@ -32,12 +32,12 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 nopadding">
           <div class="links">
           <ul>
-            <li><a href="">Cart</a></li>
-            <li><a href="">FAQs</a></li>
+            <li><a href="{$BaseHref}cart">Cart</a></li>
+            <li><a href="{$BaseHref}faqs">FAQs</a></li>
             <li><a href="">Shipping</a></li>
             <li><a href="">Terms &amp; Conditions</a></li>
             <li><a href="">Privacy Policy</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="{$BaseHref}contact">Contact</a></li>
           </ul>
           </div>
         </div>

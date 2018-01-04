@@ -25,7 +25,8 @@ var APP = 'DefApp';
 
     <div id="content" class="content clearfix">
       <div class="about-detail-view">
-        <div class="about-text-view dark-background text-cols">
+        <div class="about-text-view dark-background">
+          <div class="text-container text-cols">
           <p>
           <u>Atumqui doloria derum</u>
           <br/><br/>
@@ -38,6 +39,7 @@ var APP = 'DefApp';
           <br/><br/>
           Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide verd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem is vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
           <p>
+          </div>
         </div>
 
         <div class="quote-view">
@@ -50,7 +52,8 @@ var APP = 'DefApp';
           <div class="about-caption">Caption to go here</div>
         </div>
 
-        <div class="about-text-view text-cols">
+        <div class="about-text-view">
+          <div class="text-container text-cols">
           <p>
           <u>Atumqui doloria derum</u>
           <br/><br/>
@@ -63,6 +66,7 @@ var APP = 'DefApp';
           <br/><br/>
           Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide verd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem is vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
           <p>
+          </div>
         </div>
 
         <div class="about-photo-view small-photo">
@@ -71,35 +75,10 @@ var APP = 'DefApp';
         </div>
       </div>
 
-      <div class="feature-photo-view">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg"></div>
-        <div class="feature-caption">Caption to go here</div>
-      </div>
+      <% include DisplayFeaturePhoto %>
 
-      <div class="page-extra-highlight-view clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Journal</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
-          <div class="element-container">
-            <div class="content-container">
-              <img src="static-assets/images/temp_home_page3.jpg">
-              <div class="overlay"></div>
-              <div class="text">
-                <div class="title">Contact</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% include DisplayPageExtraHighlights %>
+
       <% include DisplayFooter %>
     </div>
   </div>

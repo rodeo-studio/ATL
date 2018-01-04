@@ -18,6 +18,7 @@ require.config({
     visible: 'libs/jquery.visible.min',
     parallax: 'libs/parallax.min',
     macy: 'libs/macy',
+    slick: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min',
     cookie: 'libs/js.cookie'
   },
   shim: {

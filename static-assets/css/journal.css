@@ -1,7 +1,3 @@
-.top-logo .logo {
-  fill: #000;
-}
-
 .cart-menu {
   color: #000;
 }
@@ -145,7 +141,9 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .journal-detail-view {
-    padding: 126px 276px 0 276px;
+    margin: 0 auto;
+    padding: 126px 0 0 0;
+    width: 890px;
     font-size: 1.5em;
   }
 
