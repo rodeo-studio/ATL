@@ -135,6 +135,9 @@ img.scale {
   vertical-align: top;
   font-size: 1.3em;
 }
+.cart-menu .update-colour {
+  color: #ffe073;
+}
 
 .main-menu {
   position: fixed;
@@ -402,6 +405,10 @@ img.scale {
   cursor: pointer;
 }
 
+.hero .down img {
+  width: 44px;
+}
+
 /* PAGE HIGHLIGHT VIEW */
 /******************************************/
 .page-highlight-view {
@@ -590,7 +597,8 @@ img.scale {
   padding: 0 32px 14px 32px;
 }
 
-.footer-view .subscribe form * {
+.footer-view .subscribe form .field,
+.footer-view .subscribe form .btn {
   margin: 0;
   padding: 0 12px;
   height: 38px;
@@ -613,6 +621,21 @@ img.scale {
 
 .footer-view .subscribe .btn {
   border: 1px #FFF solid;
+}
+
+.footer-view .subscribe .help-block {
+  display: none;
+  margin: 0;
+  padding-top: 16px;
+}
+
+.footer-view .subscribe .has-error .help-block {
+  color: #FFF;
+}
+
+.footer-view .subscribe .thanks {
+  display: none;
+  padding-top: 16px;
 }
 
 .footer-view .social li {

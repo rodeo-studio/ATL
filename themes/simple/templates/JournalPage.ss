@@ -39,11 +39,11 @@ var APP = 'DefApp';
           <div class="nav">
             <div class="nav-left nav-arrow">
             <% if PrevNextPage(prev) %>
-              <% control PrevNextPage(prev) %><a href="$Link"><span class="fa fa-long-arrow-left"></span></a><% end_control %><% else %><% control FirstLastPage(last) %><a href="$Link"><span class="fa fa-long-arrow-left"></span></a><% end_control %>
+              <% control PrevNextPage(prev) %><a href="$Link"><img src="static-assets/images/left_arrow.svg"></a><% end_control %><% else %><% control FirstLastPage(last) %><a href="$Link"><img src="static-assets/images/left_arrow.svg"></a><% end_control %>
             <% end_if %>
             </div><div class="nav-all"><a href="{$BaseHref}journal" class="highlight">Back to journal</a></div><div class="nav-right nav-arrow">
             <% if PrevNextPage(next) %>
-              <% control PrevNextPage(next) %><a href="$Link"><span class="fa fa-long-arrow-right"></span></a><% end_control %><% else %><% control FirstLastPage(first) %><a href="$Link"><span class="fa fa-long-arrow-right"></span></a><% end_control %>
+              <% control PrevNextPage(next) %><a href="$Link"><img src="static-assets/images/right_arrow.svg"></a><% end_control %><% else %><% control FirstLastPage(first) %><a href="$Link"><img src="static-assets/images/right_arrow.svg"></a><% end_control %>
             <% end_if %>
             </div>
           </div>

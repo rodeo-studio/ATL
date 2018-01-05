@@ -37,6 +37,10 @@
   cursor: pointer;
 }
 
+.product-detail-view .back-link img {
+  width: 36px;
+}
+
 .product-detail-view .back-nav .fa {
   font-size: 2em;
 }
@@ -44,7 +48,7 @@
 .product-detail-view .back-nav .link {
   vertical-align: top;
   display: inline-block;
-  padding: 0 0 0 28px;
+  padding: 0 0 0 20px;
 }
 
 .product-detail-view .cart-btns {
@@ -155,13 +159,17 @@
 
 .product-explore-view .arrow {
   position: absolute;
-  top: 50%;
+  top: 30%;
   height: 30px;
   font-size: 30px;
   margin-top: -15px;
 }
 .product-explore-view .arrow:hover {
   cursor: pointer;
+}
+
+.product-explore-view .arrow img {
+  width: 36px;
 }
 
 .product-explore-view .prev-arrow {

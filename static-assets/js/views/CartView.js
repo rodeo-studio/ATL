@@ -9,6 +9,7 @@ define([
   var CartView = Backbone.View.extend({
     initialize: function(options){
       this.options = options;
+      this.bUpdated = false;
     },
 
     create: function(){
@@ -54,6 +55,8 @@ define([
     },
 
     add: function(cartID, productID, nQty){
+      this.bUpdated = true;
+
       var strQuery = 'mutation { checkoutLineItemsAdd(lineItems: [{ variantId: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
@@ -73,6 +76,8 @@ define([
     },
 
     update: function(cartID, productID, nQty){
+      this.bUpdated = true;
+
       var strQuery = 'mutation { checkoutLineItemsUpdate(lineItems: [{ id: "' + productID + '", quantity: ' + nQty + ' }], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
@@ -92,6 +97,8 @@ define([
     },
 
     remove: function(cartID, productID){
+      this.bUpdated = true;
+
       var strQuery = 'mutation { checkoutLineItemsRemove(lineItemIds: ["' + productID + '"], checkoutId: "' + cartID + '" ) { checkout { id subtotalPrice webUrl lineItems(first: 100) { edges { node { id title quantity variant { title price } } } } } } }';
       $.ajax({
         url: SHOPIFY_GRAPHQL_API,
@@ -173,6 +180,17 @@ define([
         // fire event
         app.dispatcher.trigger("CartView:removeCartItem", elCart.attr('data-id'), $(this).attr('data-id'));
       });
+
+      // show that the cart was updated
+      if (this.bUpdated) {
+        $('.cart-menu .cart', elContainer).addClass('update-colour');
+        $('.cart-menu .items', elContainer).addClass('update-colour');
+        setTimeout(function(){ 
+          $('.cart-menu .cart', elContainer).removeClass('update-colour');
+          $('.cart-menu .items', elContainer).removeClass('update-colour');
+        }, 1000);
+      }
+      this.bUpdated = false;
 
       return this;
     }

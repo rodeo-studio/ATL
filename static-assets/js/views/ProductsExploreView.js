@@ -39,15 +39,15 @@ define([
       self.products.currProductHandle = this.options.strCurrProductHandle;
       $(this.el).html(this.template({ products: self.products }));
 
-      $('.next-arrow', $(this).el).click(function(evt){
+      $('.next-arrow', $(this.el)).click(function(evt){
         $('.products', $(self.el)).slick('slickNext');
       });
 
-      $('.prev-arrow', $(this).el).click(function(evt){
+      $('.prev-arrow', $(this.el)).click(function(evt){
         $('.products', $(self.el)).slick('slickPrev');
       });
 
-      $('.btn-add-to-cart', $(this).el).click(function(evt){
+      $('.btn-add-to-cart', $(this.el)).click(function(evt){
         // fire event
         app.dispatcher.trigger("ProductsExploreView:addToCart", $(this).attr('data-id'), 1);
       });

@@ -8,5 +8,7 @@
 <missing-glyph horiz-adv-x="512" />
 
 <glyph glyph-name="back-to-top" unicode="&#97;" d="M258 396c-77 0-140-63-140-140 0-78 63-140 140-140 77 0 140 62 140 140 0 77-63 140-140 140z m0-268c-70 0-127 57-127 128 0 70 57 127 127 127 70 0 127-57 127-127 0-71-57-128-127-128z m47 149l-9-9-32 32 0-109-12 0 0 109-32-32-9 9 47 47z"/>
-<glyph glyph-name="down-arrow" unicode="&#98;" d="M256 181l-91 91 18 18 73-73 73 73 18-18z"/>
+<glyph glyph-name="down-arrow" unicode="&#98;" d="M66 473l-16-15-16 15"/>
+<glyph glyph-name="left-arrow" unicode="&#99;" d="M35 499l-32 0m11 12l-12-12 12-12"/>
+<glyph glyph-name="right-arrow" unicode="&#100;" d="M2 499l32 0m-10 12l11-12-12-12"/>
 </font></defs></svg>

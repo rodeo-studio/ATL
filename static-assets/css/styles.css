@@ -44,3 +44,9 @@
 .icon-down-arrow:before {
   content: "\62";
 }
+.icon-left-arrow:before {
+  content: "\63";
+}
+.icon-right-arrow:before {
+  content: "\64";
+}

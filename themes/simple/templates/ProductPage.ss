@@ -12,6 +12,7 @@
 <script>
 var APP = 'DefApp';
 var PRODUCT_ID = '{$ProductID}';
+var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
 </script>
 
 <div id="top" class="product-view">
@@ -78,20 +79,20 @@ var PRODUCT_ID = '{$ProductID}';
     <div class="hidden-xs break light"></div>
 
     <div class="hidden-xs back-nav">
-      <div class="back-link"><i class="fa fa-long-arrow-left"></i><div class="link">Back to wines</div></div>
+      <div class="back-link"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></div>
     </div>
   </div>
 
   <div class="hidden-lg hidden-md hidden-sm col-xs-12 nopadding">
     <div class="back-nav">
-      <div class="back-link"><i class="fa fa-long-arrow-left"></i><div class="link">Back to wines</div></div>
+      <div class="back-link"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></div>
     </div>
   </div>
 </script>
 
 <script type="text/template" id="productsExploreViewTemplate">
   <div class="products-container">
-    <div class="arrow prev-arrow"><i class="fa fa-long-arrow-left"></i></div>
+    <div class="arrow prev-arrow"><img src="static-assets/images/left_arrow.svg"></div>
     <div class="products">
       {{ _.each(products.edges, function(product, index) { }}
         {{ if (product.node.handle != products.currProductHandle) { }}
@@ -124,7 +125,7 @@ var PRODUCT_ID = '{$ProductID}';
         {{ } }}
       {{ }); }}
     </div>
-    <div class="arrow next-arrow"><i class="fa fa-long-arrow-right"></i></div>
+    <div class="arrow next-arrow"><img src="static-assets/images/right_arrow.svg"></div>
   </div>
 </script>
 

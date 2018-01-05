@@ -9,6 +9,7 @@
 <body>
 <script>
 var APP = 'DefApp';
+var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
 </script>
 
 <div id="top">
@@ -27,18 +28,7 @@ var APP = 'DefApp';
         <div id="products-view" class="flex-grid"></div>
       </div>
 
-      <% if BaseImage %>
-        <div class="feature-photo-view clearfix">
-          <% if BaseImageParallax %>
-            <div class="parallax-window" data-parallax="scroll" data-image-src="{$BaseImage.URL}"></div>
-          <% else %>
-            <div class="image-window" style="background-image: url('{$BaseImage.URL}')"></div>
-          <% end_if %>
-          <% if BaseImageCaption %>
-            <div class="feature-caption">{$BaseImageCaption}</div>
-          <% end_if %>
-        </div>
-      <% end_if %>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 

@@ -8,6 +8,7 @@ define([
   'bootstrap',
   'modernizr',
   'imageScale',
+  'views/WeatherView',
   'views/HeroSlideView',
   'moment',
   'visible',
@@ -19,7 +20,7 @@ define([
   'views/ProductView',
   'views/ProductsExploreView',
   'views/CartView',
-], function(_, Backbone, bootstrap, modernizr, imageScale, HeroSlideView, moment, visible, parallax, Macy, slick, cookie, ProductsView, ProductView, ProductsExploreView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, WeatherView, HeroSlideView, moment, visible, parallax, Macy, slick, cookie, ProductsView, ProductView, ProductsExploreView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -35,6 +36,8 @@ define([
     var bFirstResize = true;
     var nHeroHeight = 0;
     var productsView = null, productView = null, productsExploreView = null;
+
+    app.dispatcher.on("WeatherView:loaded", onWeatherLoaded);
 
     app.dispatcher.on("HeroSlideView:ready", onHeroSlideViewReady);
 
@@ -53,6 +56,30 @@ define([
     app.dispatcher.on("CartView:updatedRemove", onCartItemUpdatedRemoveLoaded);
     app.dispatcher.on("CartView:updateCartItemQty", onUpdateCartItemQty);
     app.dispatcher.on("CartView:removeCartItem", onRemoveCartItem);
+
+    function validateForm(elForm){
+      var bValid = true;
+
+      $('.form-group', elForm).removeClass('has-error');
+      $('.help-block', elForm).hide();
+
+      // manage errs
+      $('.required', elForm).each(function(){
+        if ($(this).val() == '') {
+          bValid = false;
+          var elParent = $(this).parent();
+          elParent.addClass('has-error');
+          $('.help-block', elParent).show();
+          // highlight that there is at least 1 error
+          var elFormErr = $('.form-error', elForm);
+          if (elFormErr.length) {
+            elFormErr.addClass('has-error');
+            $('.help-block', elFormErr).show();
+          }
+        }
+      });
+      return bValid;
+    }
 
     function changeSlide() {
       arrHeroSlides[nCurrSlide].hide();
@@ -113,6 +140,10 @@ define([
       checkInView();
     }
 
+    function onWeatherLoaded() {
+      weatherView.render();
+    }
+
     function onHeroSlideViewReady(elHeroSlide) {
     }
 
@@ -123,6 +154,7 @@ define([
     }
 
     function onProductAddToCart(productID, nQty) {
+      console.log('onProductAddToCart');
       var cartCookie = getCartCookie();
       if (cartCookie != undefined) {
         cartView.add(cartCookie, productID, nQty);
@@ -142,25 +174,42 @@ define([
     }
 
     function onCartLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
-      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      if ($('#cart-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
+      }
+      if ($('#cart-detail-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      }
       // for the parallax
       jQuery(window).trigger('resize').trigger('scroll');
     }
 
     function onCartItemAddedLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
-      cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      console.log('onCartItemAddedLoaded');
+      if ($('#cart-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
+      }
+      if ($('#cart-detail-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      }
     }
 
     function onCartItemUpdatedQtyLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-view'), $('#cartViewTemplate'));
-      cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      if ($('#cart-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-view'), $('#cartViewTemplate'));
+      }
+      if ($('#cart-detail-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsUpdate, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      }
     }
 
     function onCartItemUpdatedRemoveLoaded(jsonCart) {
-      cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-view'), $('#cartViewTemplate'));
-      cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      if ($('#cart-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-view'), $('#cartViewTemplate'));
+      }
+      if ($('#cart-detail-view').length) {
+        cartView.render(jsonCart.data.checkoutLineItemsRemove, $('#cart-detail-view'), $('#cartDetailViewTemplate'));
+      }
     }
 
     function onUpdateCartItemQty(cartID, productID, nQty) {
@@ -239,6 +288,9 @@ define([
       });
     }
 
+    var weatherView = new WeatherView({ el: '#weather-view', lat: -33.833570, lon: 138.610000 });
+    weatherView.load();
+
     var cartView = new CartView();
 
     var cartCookie = getCartCookie();
@@ -305,6 +357,19 @@ define([
       $('#menu-overlay').removeClass('open');
 
       handleResize();
+    });
+
+    $('#signup').submit(function(evt){
+      evt.preventDefault();
+      
+      $.post("server/mailerproxy.php", $('#signup').serialize()).success(function(data) {
+        console.log(data);
+      });
+
+      $('#signup .thanks').hide();
+      if (validateForm($('#signup'))) {
+        $('#signup .thanks').show();
+      }
     });
 
     // for the parallax

@@ -3,8 +3,15 @@
     <div class="element-container">
       <div class="subscribe">
         <div class="msg">Subscribe for news updates  and special offers</div>
-        <form>
+        <form id="signup" class="form-signup" method="post">
           <input type="email" class="field required" id="form-email" placeholder="Email"><button type="submit" class="btn btn-default">Send</button>
+
+          <div class="form-error">
+            <div class="help-block">Please fill in your email address</div>
+          </div>
+
+          <div class="thanks">Thank you for subscribing!</div>
+
         </form>
       </div>
       <div class="social">
@@ -24,8 +31,8 @@
             <li>South Australia</li>
           </ul>
           <ul class="data">
-            <li><i class="fa fa-cloud"></i> 24&deg;C</li>
-            <li><i class="fa fa-clock-o"></i> 12:00 pm</li>
+            <div id="weather-view"></div>
+            <li><i class="fa fa-clock-o"></i> {$LocationFriendlyTime}</li>
           </ul>
           </div>
         </div>
@@ -46,7 +53,11 @@
         </div>
       </div>
 
-      <div class="copyright">© 2017 Atlas Wines — All Rights Reserved.  Design by <a href="http://rodeo.com.co/" target="_blank">Rodeo</a>. </div>
+      <div class="copyright">© 2018 Atlas Wines — All Rights Reserved.  Design by <a href="http://rodeo.com.co/" target="_blank">Rodeo</a>. </div>
     </div>
   </div>
 </div>
+
+<script type="text/template" id="weatherViewTemplate">
+  <li><i class="wi wi-{{= weatherType }}"></i> {{= Math.round(weather.main.temp) }}&deg;C</li>
+</script>

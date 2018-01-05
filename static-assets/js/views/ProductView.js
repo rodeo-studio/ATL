@@ -49,6 +49,7 @@ define([
         var nQty = Number(elQty.attr('data-qty'));
 
         // fire event
+        console.log('FIRE');
         app.dispatcher.trigger("ProductView:addToCart", $(this).attr('data-id'), nQty);
       });
 

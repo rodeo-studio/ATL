@@ -19,7 +19,7 @@ var APP = 'DefApp';
           <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_journal.jpg"></div>
         </div>
         <div class="strap">{$MenuTitle}</div>
-        <div class="down"><i class="icon-down-arrow"></i></div>
+        <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
       </div>
     </div>
 

@@ -1,3 +1,11 @@
+.top-logo .black {
+  display: block;
+}
+
+.top-logo .white {
+  display: none;
+}
+
 .cart-menu {
   color: #000;
 }
@@ -49,6 +57,10 @@
 
 .journal-detail-view .nav .nav-arrow {
   font-size: 2em;
+}
+
+.journal-detail-view .nav .nav-arrow img {
+  width: 36px;
 }
 
 .journal-detail-view .nav a,

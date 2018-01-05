@@ -16,25 +16,29 @@ var APP = 'DefApp';
     <div class="hero">
       <div class="hero-container">
         <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_home_hero.jpg"></div>
+          <div class="hero-item image_container fade_on_load">
+          <% if HeroImage %>
+            <img class="scale" src="{$HeroImage.URL}">
+          <% end_if %>
+          </div>
         </div>
         <div class="strap">
           <div class="logo"><img src="static-assets/images/logo.png"></div>
         </div>
-        <div class="down"><i class="icon-down-arrow"></i></div>
+        <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
       </div>
     </div>
 
     <div id="content" class="content clearfix">
       <% include DisplayPageHighlights %>
 
-      <div class="quote-view clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-        h AljDHhS jmqui dOlOria derum l Un atur SolUPtAtut VelLrum q  are oFfis erUptat.
+      <% if Quote %>
+        <div class="quote-view clearfix">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">$Quote</div>
         </div>
-      </div>
+      <% end_if %>
 
-      <% include DisplayFeaturePhoto %>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 
