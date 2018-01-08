@@ -8,7 +8,7 @@
           <div class="overlay"></div>
           <div class="text">
             <div class="title-container">
-              <div class="title">$MenuTitle</div>
+              <span class="title">$MenuTitle</span>
             </div>
           </div>
           </a>
@@ -26,7 +26,7 @@
           <div class="overlay"></div>
           <div class="text">
             <div class="title-container">
-              <div class="title">$MenuTitle</div>
+              <span class="title">$MenuTitle</span>
             </div>
           </div>
           </a>

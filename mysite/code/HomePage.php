@@ -58,6 +58,7 @@ class HomePage extends Page {
     $uploadPageLinkField2->setCanUpload(false);
     $fields->addFieldToTab('Root.PageLinks', $uploadPageLinkField2);
 
+    // Page extra links
     $fields->addFieldToTab('Root.PageLinks', new LiteralField('literalfield', '<strong>Page Extra Link 1</strong>'));
     $fields->addFieldToTab('Root.PageLinks', new TreeDropdownField('PageExtraLink1ID', 'Page', 'Page'));
     $uploadPageExtraLinkField1 = new UploadField($name = 'PageExtraLinkImage1', $title = 'Image');

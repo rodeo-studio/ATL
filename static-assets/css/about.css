@@ -4,14 +4,15 @@
   padding-bottom: 56px;
 }
 
+.about-detail-view .dark-background {
+  background-color: #f7f6f4;
+}
+
 /* ABOUT TEXT VIEW */
 /******************************************/
 .about-text-view {
   padding: 66px 38px;
   color: #000;
-}
-.about-text-view.dark-background {
-  background-color: #f7f6f4;
 }
 
 .about-text-view u {
@@ -40,6 +41,7 @@
 .about-photo-view .image-window {
   min-height: 282px;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-photo-view .about-caption {

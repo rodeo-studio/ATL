@@ -16,7 +16,11 @@ var APP = 'DefApp';
     <div class="hero">
       <div class="hero-container">
         <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_journal.jpg"></div>
+          <div class="hero-item image_container fade_on_load">
+          <% if HeroImage %>
+            <img class="scale" src="{$HeroImage.URL}">
+          <% end_if %>
+          </div>
         </div>
         <div class="strap">{$MenuTitle}</div>
         <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
@@ -25,57 +29,51 @@ var APP = 'DefApp';
 
     <div id="content" class="content clearfix">
       <div class="about-detail-view">
-        <div class="about-text-view dark-background">
-          <div class="text-container text-cols">
-          <p>
-          <u>Atumqui doloria derum</u>
-          <br/><br/>
-          Laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditaturd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem Et voloriossim ratenis que si dolut quibustrum quae non culluptas id molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem dissit moluptatur, aut eture consere ssedis ne reium aut experistio volorum estet.  vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
-          </p>
-          <p>
-          <u>Et voloriossim ratenis</u>
-          <br/><br/>
-          Que si dolut quibustrum quae non culluptas id molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem dissit moluptatur, aut eture consere ssedis ne reium aut experistio volorum estet.
-          <br/><br/>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide verd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem is vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
-          <p>
-          </div>
-        </div>
-
-        <div class="quote-view">
-          “lUn atur SolU PtAtut Vel Lrum oF fis erUp tat.”
-          <div class="attribution">— joe Smith</div>
-        </div>
-
-        <div class="about-photo-view">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-          <div class="about-caption">Caption to go here</div>
-        </div>
-
-        <div class="about-text-view">
-          <div class="text-container text-cols">
-          <p>
-          <u>Atumqui doloria derum</u>
-          <br/><br/>
-          Laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditaturd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem Et voloriossim ratenis que si dolut quibustrum quae non culluptas id molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem dissit moluptatur, aut eture consere ssedis ne reium aut experistio volorum estet.  vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
-          </p>
-          <p>
-          <u>Et voloriossim ratenis</u>
-          <br/><br/>
-          Que si dolut quibustrum quae non culluptas id molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem dissit moluptatur, aut eture consere ssedis ne reium aut experistio volorum estet.
-          <br/><br/>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide verd molut et, temodit aut recae porem rat aliandu saectur accumendem il min rehendit labo. Erum repelectat ut reperit, omnimus recto tem is vit utemqui autamus maximus vent a nihillut vel voluptur sed ea dollest iaerepu ditatur.
-          <p>
-          </div>
-        </div>
-
-        <div class="about-photo-view small-photo">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-          <div class="about-caption">Caption to go here</div>
-        </div>
+        <% loop AboutElements %>
+          <% if Type = 0 %>
+            <% if BackgroundColour = 1 %>
+            <div class="about-text-view dark-background">
+            <% else %>
+            <div class="about-text-view">
+            <% end_if %>
+              <div class="text-container text-cols">$Content</div>
+            </div>
+          <% else_if Type = 1 %>
+            <% if BackgroundColour = 1 %>
+            <div class="quote-view dark-background">
+            <% else %>
+            <div class="quote-view">
+            <% end_if %>
+              “{$Quote}”
+              <div class="attribution">— {$QuoteCredit}</div>
+            </div>
+          <% else_if Type = 2 %>
+            <% if BackgroundColour = 1 %>
+            <div class="about-photo-view small-photo dark-background">
+            <% else %>
+            <div class="about-photo-view small-photo">
+            <% end_if %>
+              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+              <% if ImageCredit %>
+                <div class="about-caption small-photo">{$ImageCredit}</div>
+              <% end_if %>
+            </div>
+          <% else_if Type = 3 %>
+            <% if BackgroundColour = 1 %>
+            <div class="about-photo-view dark-background">
+            <% else %>
+            <div class="about-photo-view">
+            <% end_if %>
+              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+              <% if ImageCredit %>
+                <div class="about-caption">{$ImageCredit}</div>
+              <% end_if %>
+            </div>
+          <% end_if %>
+        <% end_loop %>
       </div>
 
-      <% include DisplayFeaturePhoto %>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 

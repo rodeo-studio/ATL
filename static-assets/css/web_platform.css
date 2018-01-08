@@ -555,12 +555,11 @@ img.scale {
 }
 
 .page-extra-highlight-view .element-container .text .title {
-  display: inline-block;
-  padding-bottom: 4px;
+  padding-bottom: 0;
   font-family: 'ano_blackwide';
   text-transform: uppercase;
   font-size: 1.1em;
-  line-height: 1em;
+  line-height: 1.6em;
 }
 
 .page-extra-highlight-view .content-container:hover .text .title {

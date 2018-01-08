@@ -10,7 +10,11 @@ class ProductsPage extends Page {
   );
 
   private static $has_one = array(
-    'BaseImage' => 'Image'
+    'BaseImage' => 'Image',
+    'PageExtraLink1' => 'SiteTree',
+    'PageExtraLinkImage1' => 'Image',
+    'PageExtraLink2' => 'SiteTree',
+    'PageExtraLinkImage2' => 'Image'
   );
 
   function getCMSFields() {
@@ -21,6 +25,19 @@ class ProductsPage extends Page {
     $fields->addFieldToTab('Root.Main', $uploadField1);
     $fields->addFieldToTab("Root.Main", new CheckboxField ('BaseImageParallax', 'Enable Parallax'));
     $fields->addFieldToTab('Root.Main', new TextField('BaseImageCaption', 'Base Image Caption'));
+
+    // Page extra links
+    $fields->addFieldToTab('Root.PageLinks', new LiteralField('literalfield', '<strong>Page Extra Link 1</strong>'));
+    $fields->addFieldToTab('Root.PageLinks', new TreeDropdownField('PageExtraLink1ID', 'Page', 'Page'));
+    $uploadPageExtraLinkField1 = new UploadField($name = 'PageExtraLinkImage1', $title = 'Image');
+    $uploadPageExtraLinkField1->setCanUpload(false);
+    $fields->addFieldToTab('Root.PageLinks', $uploadPageExtraLinkField1);
+
+    $fields->addFieldToTab('Root.PageLinks', new LiteralField('literalfield', '<strong>Page Extra Link 2</strong>')); 
+    $fields->addFieldToTab('Root.PageLinks', new TreeDropdownField('PageExtraLink2ID', 'Page', 'Page'));
+    $uploadPageExtraLinkField2 = new UploadField($name = 'PageExtraLinkImage2', $title = 'Image');
+    $uploadPageExtraLinkField2->setCanUpload(false);
+    $fields->addFieldToTab('Root.PageLinks', $uploadPageExtraLinkField2);
 
     return $fields;
   }
