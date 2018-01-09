@@ -17,7 +17,11 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     <div class="hero">
       <div class="hero-container">
         <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_journal.jpg"></div>
+          <div class="hero-item image_container fade_on_load">
+          <% if HeroImage %>
+            <img class="scale" src="{$HeroImage.URL}">
+          <% end_if %>
+          </div>
         </div>
         <div class="strap">Vineyards<br/>&amp; Growsers</div>
         <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
@@ -25,111 +29,36 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     </div>
 
     <div id="content" class="content clearfix">
-      <div class="vineyards-detail-view">
-      Introduction paragraph —  an overview of the partenrship with the following vineyards and growers: <a href="#atlas">Atlas Vineyard</a>, Churinga Vineyard, Eton Vineyard, Gullyview Vineyard, Noack Vineyard, Schiller, Schobers and Schultz. Focus on provenance of wines via exeptional fruit and ongoing relationships with suppliers.
-      </div>
-
-      <div class="vineyard-view dark-background">
-        <a name="atlas"></a>
-        <div class="title">
-          <div class="break light"></div>
-          <h1>Atlas vineyard</h1>
-          <div class="break light"></div>
-        </div>
-        <div class="text-view">
-          <div class="intro">
-            <div class="grower">GROWER — Adam Barton</div>
-            <div class="location">LOCATION — Clare Valley, SA</div>
-            <div>DESCRIPTION</div>
+      <div class="vineyards-detail-view">$Intro</div>
+      <% loop VineyardElements %>
+        <% if Even %>
+        <div class="vineyard-view">
+        <% else %>
+        <div class="vineyard-view dark-background">
+        <% end_if %>
+          <a name="{$Anchor}"></a>
+          <div class="title">
+            <div class="break light"></div>
+            <h1>$Title</h1>
+            <div class="break light"></div>
           </div>
-          <p>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihilili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vquatiur ratqui.
-          </p>
-          <p>
-          Re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditatur. Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossvoluptur sed ea dollest iaerepu ditatur.
-          </p>
-        </div>
-        <div class="vineyard-photo-view">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-        </div>
-      </div>
-
-      <div class="vineyard-view">
-        <a name="atlas"></a>
-        <div class="title">
-          <div class="break light"></div>
-          <h1>Atlas vineyard</h1>
-          <div class="break light"></div>
-        </div>
-        <div class="text-view">
-          <div class="intro">
-            <div class="grower">GROWER — Adam Barton</div>
-            <div class="location">LOCATION — Clare Valley, SA</div>
-            <div>DESCRIPTION</div>
+          <div class="text-view">
+            <div class="intro">
+              <div class="grower">GROWER — {$Grower}</div>
+              <div class="location">LOCATION — {$Location}</div>
+              <div>DESCRIPTION</div>
+            </div>
+            $Content
           </div>
-          <p>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihilili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vquatiur ratqui.
-          </p>
-          <p>
-          Re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditatur. Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossvoluptur sed ea dollest iaerepu ditatur.
-          </p>
+          <% if HeroImage %>
+            <div class="vineyard-photo-view">
+              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+            </div>
+          <% end_if %>
         </div>
-        <div class="vineyard-photo-view">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-        </div>
-      </div>
+      <% end_loop %>
 
-      <div class="vineyard-view dark-background">
-        <a name="atlas"></a>
-        <div class="title">
-          <div class="break light"></div>
-          <h1>Atlas vineyard</h1>
-          <div class="break light"></div>
-        </div>
-        <div class="text-view">
-          <div class="intro">
-            <div class="grower">GROWER — Adam Barton</div>
-            <div class="location">LOCATION — Clare Valley, SA</div>
-            <div>DESCRIPTION</div>
-          </div>
-          <p>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihilili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vquatiur ratqui.
-          </p>
-          <p>
-          Re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditatur. Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossvoluptur sed ea dollest iaerepu ditatur.
-          </p>
-        </div>
-        <div class="vineyard-photo-view">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-        </div>
-      </div>
-
-      <div class="vineyard-view">
-        <a name="atlas"></a>
-        <div class="title">
-          <div class="break light"></div>
-          <h1>Atlas vineyard</h1>
-          <div class="break light"></div>
-        </div>
-        <div class="text-view">
-          <div class="intro">
-            <div class="grower">GROWER — Adam Barton</div>
-            <div class="location">LOCATION — Clare Valley, SA</div>
-            <div>DESCRIPTION</div>
-          </div>
-          <p>
-          Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihilili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vquatiur ratqui.
-          </p>
-          <p>
-          Re, officiis eruptat quossed qui voluptur sed ea dollest iaerepu ditatur. Atumqui doloria derum laborun totatur soluptatur? Nullacc uptatur archili sinvel is dessunt vide veris vit utemqui autamus maximus vent a nihillut vellorum quatiur ratqui re, officiis eruptat quossvoluptur sed ea dollest iaerepu ditatur.
-          </p>
-        </div>
-        <div class="vineyard-photo-view">
-          <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-        </div>
-      </div>
-
-      <% include DisplayFeaturePhoto %>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 

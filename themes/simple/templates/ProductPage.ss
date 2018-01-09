@@ -103,6 +103,19 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
               {{ if (product.node.images.edges.length) { }}
                 <img src="{{= product.node.images.edges[0].node.src }}">
               {{ } }}
+
+
+      {{ if (!product.node.variants.edges[0].node.availableForSale) { }}
+        <div class="sticker-container">
+          <div class="sticker"><img src="static-assets/images/sold_out.svg"></div>
+        </div>
+      {{ } else if (product.node.variants.edges[0].node.price == 0) { }}
+        <div class="sticker-container">
+          <div class="sticker"><img src="static-assets/images/coming_soon.svg"></div>
+        </div>
+      {{ } }}
+
+
               </div>
               </a>
               <div class="detail">

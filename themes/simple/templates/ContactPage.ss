@@ -16,7 +16,11 @@ var APP = 'DefApp';
     <div class="hero">
       <div class="hero-container">
         <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_journal.jpg"></div>
+          <div class="hero-item image_container fade_on_load">
+          <% if HeroImage %>
+            <img class="scale" src="{$HeroImage.URL}">
+          <% end_if %>
+          </div>
         </div>
         <div class="strap">{$MenuTitle}</div>
         <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
@@ -26,66 +30,32 @@ var APP = 'DefApp';
     <div id="content" class="content clearfix">
       <div class="contact-detail-view">
         <div class="contact-block clearfix">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 nopadding">
             <div class="title"><h1>ATLAS WINES</h1></div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
-            <div class="text">
-            <a href="mailto:cellardoor@atlaswines.com.au">cellardoor@atlaswines.com.au</a>
-            <br/><br/>
-            PO BOX 458, Clare SA <br/>
-            Australia 5453
-            </div>
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nopadding">
+            <div class="text">$MainContactInfo</div>
           </div>
         </div>
         <div class="contact-block clearfix">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 nopadding">
             <div class="title"><h1>INTERESTED IN STOCKING ATLAS WINES?</h1></div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">            
-            <div class="text">
-            <strong>South Australia</strong><br/>
-            Chace Agencies<br/>
-            <a href="mailto: admin@chace.com.au"> admin@chace.com.au</a>
-            <hr>
-            <strong>  New South Wales</strong><br/>
-            Cuttings Wine Merchants<br/>
-            <a href=""> adam@atlaswines.com.au</a>
-            <hr>
-            <strong>  Victoria</strong><br/>
-             Steve Benjamin<br/>
-            <a href=""> steve@trentwoodinternational.com.au</a>
-            <hr>
-            <strong>  Western Australia </strong><br/>
-            Rob Palandri<br/>
-            <a href=""> rpalandri@bigpond.com</a>
-            <hr>
-            <strong>  Queensland & Tasmania</strong><br/>
-            Adam Barton<br/>
-            <a href=""> adam@atlaswines.com.au</a>
-            <hr>
-            <strong>  International</strong><br/>
-             Adam Barton<br/>
-            <a href=""> adam@atlaswines.com.au</a>
-            </div>
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nopadding">
+            <div class="text">$StockingContactInfo</div>
           </div>
         </div>
         <div class="contact-block clearfix">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">            
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 nopadding">
             <div class="title"><h1>FOR MEDIA AND GENERAL ENQUIRIES</h1></div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">            
-            <div class="text">
-            <strong>Amy Lane</strong><br/>
-            <a href=""> office@atlaswines.com.au</a>
-            </div>
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nopadding">
+            <div class="text">$MediaContactInfo</div>
           </div>
         </div>
       </div>
 
-      <div class="feature-photo-view">
-        <div class="image-window" style="background-image: url('static-assets/images/temp_contact.jpg')"></div>
-      </div>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 

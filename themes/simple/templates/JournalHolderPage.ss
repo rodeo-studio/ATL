@@ -16,7 +16,11 @@ var APP = 'DefApp';
     <div class="hero">
       <div class="hero-container">
         <div class="hero-carousel">
-          <div class="hero-item image_container fade_on_load"><img class="scale" src="static-assets/images/temp_journal.jpg"></div>
+          <div class="hero-item image_container fade_on_load">
+          <% if HeroImage %>
+            <img class="scale" src="{$HeroImage.URL}">
+          <% end_if %>
+          </div>
         </div>
         <div class="strap">{$MenuTitle}</div>
         <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
@@ -46,10 +50,7 @@ var APP = 'DefApp';
         </div>
       </div>
 
-      <div class="feature-photo-view">
-        <div class="image-window" style="background-image: url('http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg')"></div>
-        <div class="feature-caption">Caption to go here</div>
-      </div>
+      <% include DisplayBaseImage %>
 
       <% include DisplayPageExtraHighlights %>
 

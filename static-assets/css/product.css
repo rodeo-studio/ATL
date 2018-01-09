@@ -224,6 +224,18 @@
   height: 100%;
 }
 
+.product-explore-view .sticker-container {
+  position: absolute;
+  top: 14px;
+  left: -34px;
+  width: 100%;
+}
+
+.product-explore-view .sticker {
+  width: 68px;
+  margin: 0 auto;
+}
+
 .product-explore-view .cart-btns {
   padding-top: 16px;
 }
