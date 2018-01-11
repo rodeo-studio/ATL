@@ -49,7 +49,7 @@ class AboutElement extends DataObject {
       $value = 0
     );
 
-    $uploadImageField = new UploadField($name = 'HeroImage', $title = 'Hero Image');
+    $uploadImageField = new UploadField($name = 'HeroImage', $title = 'Image');
     $uploadImageField->setCanUpload(false);
 
     $fields = new FieldList (
@@ -60,7 +60,7 @@ class AboutElement extends DataObject {
       new LiteralField ('literalfield', '<strong>Quote Text</strong>'),
       new TextField('Quote', 'Quote'),
       new TextField('QuoteCredit', 'Credit'),
-      new LiteralField ('literalfield', '<strong>Image</strong>'),
+      new LiteralField ('literalfield', '<strong>Element Image</strong>'),
       $uploadImageField,
       new TextField('ImageCredit', 'Caption')
     );

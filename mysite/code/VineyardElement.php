@@ -26,7 +26,7 @@ class VineyardElement extends DataObject {
   private static $default_sort = "SortID ASC";
   
   function getCMSFields() {
-    $uploadImageField = new UploadField($name = 'HeroImage', $title = 'Hero Image');
+    $uploadImageField = new UploadField($name = 'HeroImage', $title = 'Image');
     $uploadImageField->setCanUpload(false);
 
     $fields = new FieldList (

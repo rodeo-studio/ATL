@@ -31,17 +31,21 @@ class HomePage extends Page {
     // remove fields
     $fields->removeFieldFromTab('Root.Main', 'Content');
 
-    $uploadHeroField = new UploadField($name = 'HeroImage', $title = 'Hero Image');
+    // Hero Image
+    $fields->addFieldToTab('Root.Main', new LiteralField('literalfield', '<strong>Hero Image</strong>')); 
+    $uploadHeroField = new UploadField($name = 'HeroImage', $title = 'Image');
     $uploadHeroField->setCanUpload(false);
     $fields->addFieldToTab('Root.Main', $uploadHeroField);
 
     $fields->addFieldToTab('Root.Main', new TextField('Quote', 'Quote'));
 
-    $uploadField1 = new UploadField($name = 'BaseImage', $title = 'Base Image');
+    // Base Image
+    $fields->addFieldToTab('Root.Main', new LiteralField('literalfield', '<strong>Base Image</strong>')); 
+    $uploadField1 = new UploadField($name = 'BaseImage', $title = 'Image');
     $uploadField1->setCanUpload(false);
     $fields->addFieldToTab('Root.Main', $uploadField1);
     $fields->addFieldToTab("Root.Main", new CheckboxField ('BaseImageParallax', 'Enable Parallax'));
-    $fields->addFieldToTab('Root.Main', new TextField('BaseImageCaption', 'Base Image Caption'));
+    $fields->addFieldToTab('Root.Main', new TextField('BaseImageCaption', 'Caption'));
 
     // Page links
     $fields->addFieldToTab('Root.PageLinks', new LiteralField('literalfield', '<strong>Page Link 1</strong>'));
