@@ -40,6 +40,7 @@
 
 .about-photo-view .image-window {
   min-height: 282px;
+  background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -63,6 +64,8 @@
 
   .about-text-view p {
     -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .about-text-view .text-container.text-cols {

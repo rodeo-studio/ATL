@@ -4,4 +4,5 @@ After: framework/routes#coreroutes
 ---
 Director:
   rules:
+    'faqs/$FAQBlock': 'FAQPage_Controller'
     'products/product/$ProductID': 'ProductPage_Controller'

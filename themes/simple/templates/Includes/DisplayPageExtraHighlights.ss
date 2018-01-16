@@ -8,7 +8,7 @@
           <div class="overlay"></div>
           <div class="text">
             <div class="title-container">
-              <span class="title">$MenuTitle</span>
+              <span class="title"><% if ShortName %>$ShortName<% else %>$MenuTitle<% end_if %></span>
             </div>
           </div>
           </a>
@@ -26,7 +26,7 @@
           <div class="overlay"></div>
           <div class="text">
             <div class="title-container">
-              <span class="title">$MenuTitle</span>
+              <span class="title"><% if ShortName %>$ShortName<% else %>$MenuTitle<% end_if %></span>
             </div>
           </div>
           </a>

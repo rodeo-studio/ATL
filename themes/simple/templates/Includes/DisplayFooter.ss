@@ -41,9 +41,9 @@
           <ul>
             <li><a href="{$BaseHref}cart">Cart</a></li>
             <li><a href="{$BaseHref}faqs">FAQs</a></li>
-            <li><a href="">Shipping</a></li>
-            <li><a href="">Terms &amp; Conditions</a></li>
-            <li><a href="">Privacy Policy</a></li>
+            <li><a href="{$BaseHref}faqs/shipping">Shipping</a></li>
+            <li><a href="{$BaseHref}faqs/terms">Terms &amp; Conditions</a></li>
+            <li><a href="{$BaseHref}faqs/privacy">Privacy Policy</a></li>
             <li><a href="{$BaseHref}contact">Contact</a></li>
           </ul>
           </div>

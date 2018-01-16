@@ -50,12 +50,13 @@ var APP = 'DefApp';
         </div>
       </div>
 
-      <div class="feature-photo-view">
-        <div class="parallax-window" data-parallax="scroll" data-image-src="http://pixelcog.github.io/parallax.js/img/helix-nebula-1400x1400.jpg"></div>
-        <div class="feature-caption">Caption to go here</div>
-      </div>
+      <% control JournalHolderPage %>
+        <% include DisplayBaseImage %>
+      <% end_control %>
 
-      <% include DisplayPageExtraHighlights %>
+      <% control JournalHolderPage %>
+        <% include DisplayPageExtraHighlights %>
+      <% end_control %>
 
       <% include DisplayFooter %>
     </div>

@@ -36,6 +36,9 @@ class JournalPage_Controller extends Page_Controller {
 
   public function init() {
     parent::init();
+
+    // get journal page links
+    $this->JournalHolderPage = DataObject::get_one("JournalHolderPage");
   }
 
   public function FirstLastPage($Mode = 'first') {

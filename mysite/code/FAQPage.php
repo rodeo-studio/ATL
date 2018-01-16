@@ -6,7 +6,9 @@ class FAQPage extends Page {
 
   private static $has_many = array(
     'FAQGeneralElements' => 'FAQGeneralElement',
-    'FAQShippingElements' => 'FAQShippingElement'
+    'FAQShippingElements' => 'FAQShippingElement',
+    'FAQTermsElements' => 'FAQTermsElement',
+    'FAQPrivacyElements' => 'FAQPrivacyElement'
   );
 
   private static $has_one = array(
@@ -45,6 +47,32 @@ class FAQPage extends Page {
     $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Shipping</strong>')); 
     $fields->addFieldToTab('Root.Main', $faqShippingElementField); 
 
+    $config3 = GridFieldConfig_RelationEditor::create();
+    $config3->removeComponentsByType('GridFieldPaginator');
+    $config3->removeComponentsByType('GridFieldPageCount');
+    $config3->addComponent(new GridFieldSortableRows('SortID'));
+    $faqTermsElementField = new GridField(
+      'FAQTermsElement', // Field name
+      'FAQ Terms Element', // Field title
+      $this->FAQTermsElements(),
+      $config3
+    );
+    $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Terms & Conditions</strong>')); 
+    $fields->addFieldToTab('Root.Main', $faqTermsElementField); 
+
+    $config4 = GridFieldConfig_RelationEditor::create();
+    $config4->removeComponentsByType('GridFieldPaginator');
+    $config4->removeComponentsByType('GridFieldPageCount');
+    $config4->addComponent(new GridFieldSortableRows('SortID'));
+    $faqPrivacyElementField = new GridField(
+      'FAQPrivacyElement', // Field name
+      'FAQ Privacy Element', // Field title
+      $this->FAQPrivacyElements(),
+      $config4
+    );
+    $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Privacy Policy</strong>')); 
+    $fields->addFieldToTab('Root.Main', $faqPrivacyElementField); 
+
     return $fields;
   }
 
@@ -55,5 +83,14 @@ class FAQPage_Controller extends Page_Controller {
 
   public function init() {
     parent::init();
+
+    if ($this->getRequest()->param('FAQBlock')) {
+      $this->FAQBlockAnchor = $this->getRequest()->param('FAQBlock');
+    }
+    $this->FAQPage = DataObject::get_one("FAQPage");
+  }
+
+  public function index($request) {
+    return $this->renderWith('FAQPage');
   }
 }

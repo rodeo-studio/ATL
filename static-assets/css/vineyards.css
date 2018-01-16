@@ -68,12 +68,6 @@
   padding: 0 15px;
 }
 
-.vineyard-photo-view .image-window {
-  min-height: 282px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .vineyard-photo-view .vineyard-caption {
   padding: 8px 15px;
   color: #2E2E2E;
@@ -92,7 +86,7 @@
   }
 
   .vineyard-view .title {
-    padding: 0 172px;
+    padding: 0 192px;
   }
 
   .vineyard-view .title h1 {
@@ -104,10 +98,6 @@
     padding: 36px 172px 48px 172px;
     font-size: 1.2em;
     line-height: 1.3em;
-  }
-
-  .vineyard-photo-view .image-window {
-    min-height: 342px;
   }
 
   .vineyard-photo-view .vineyard-caption {
@@ -128,7 +118,7 @@
   }
 
   .vineyard-view .title {
-    padding: 0 234px;
+    padding: 0 254px;
   }
 
   .vineyard-view .title h1 {
@@ -142,10 +132,6 @@
 
   .vineyard-photo-view {
     padding: 0 32px;
-  }
-
-  .vineyard-photo-view .image-window {
-    min-height: 446px;
   }
 
   .vineyard-photo-view .vineyard-caption {
@@ -167,7 +153,9 @@
   }
 
   .vineyard-view .title {
-    padding: 0 364px;
+    padding: 0;
+    margin: 0 auto;
+    width: 514px;
   }
 
   .text-view {
@@ -178,10 +166,6 @@
 
   .vineyard-photo-view {
     padding: 0 48px;
-  }
-
-  .vineyard-photo-view .image-window {
-    min-height: 646px;
   }
 
   .vineyard-photo-view .vineyard-caption {

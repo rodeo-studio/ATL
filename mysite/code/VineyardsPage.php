@@ -2,6 +2,7 @@
 class VineyardsPage extends Page {
 
   private static $db = array(
+    'ShortName' => 'Text',
     'BaseImageParallax' => 'Boolean',
     'BaseImageCaption' => 'Text',
     'Intro' => 'HTMLText'
@@ -25,6 +26,8 @@ class VineyardsPage extends Page {
 
     // remove fields
     $fields->removeFieldFromTab('Root.Main', 'Content');
+
+    $fields->addFieldToTab('Root.Main', new TextField('ShortName', 'Short Name'));
 
     // Hero Image
     $fields->addFieldToTab('Root.Main', new LiteralField('literalfield', '<strong>Hero Image</strong>')); 

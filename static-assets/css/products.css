@@ -89,6 +89,11 @@ body {
   height: 100%;
 }
 
+.products-view .product-view:hover .image img {
+  margin-top: -2%;
+  height: 105%;
+}
+
 .products-view .sticker-container {
   position: absolute;
   top: 64px;

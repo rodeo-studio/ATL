@@ -4,7 +4,7 @@ define([
 ], function(_, Backbone){
 
   var WEATHER_BASEURL = 'http://api.openweathermap.org/data/2.5/weather';
-  var WEATHER_APPID = 'ebd0689d6c9224dd829e3624ec18181d';
+  var WEATHER_APPID = '195b249c52b421e06ddd03f96ded4c51';
   var UNITS_METRIC = 0;
 
   var WeatherView = Backbone.View.extend({

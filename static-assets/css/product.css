@@ -345,7 +345,12 @@
   }
 
   .product-explore-view {
-    padding: 128px 146px 108px 146px;
+    padding: 128px 0 108px 0;
+  }
+
+  .product-explore-view .products-container {
+    width: 1134px;
+    margin: 0 auto;
   }
 
   .product-explore-view .products {

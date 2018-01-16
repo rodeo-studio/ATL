@@ -23,7 +23,7 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
           <% end_if %>
           </div>
         </div>
-        <div class="strap">Vineyards<br/>&amp; Growsers</div>
+        <div class="strap">Vineyards<br/>&amp; Growers</div>
         <div class="down"><img src="static-assets/images/down_arrow_white.svg"></div>
       </div>
     </div>
@@ -52,7 +52,7 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
           </div>
           <% if HeroImage %>
             <div class="vineyard-photo-view">
-              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+              <div class="image"><img src="{$HeroImage.URL}"></div>
             </div>
           <% end_if %>
         </div>

@@ -6,7 +6,7 @@
 <link href='static-assets/css/faq.css' rel='stylesheet' />
 </head>
 
-<body>
+<body data-block="{$FAQBlockAnchor}">
 <script>
 var APP = 'DefApp';
 </script>
@@ -14,32 +14,38 @@ var APP = 'DefApp';
 <div id="top">
   <div class="container-fluid nopadding">
     <div id="content" class="content clearfix">
-      <div class="faq-view">
-        <div class="faq-block-view">
-          <h1>FAQS</h1>
-          <% loop FAQGeneralElements %>
-            <div class="text-block-view">
-              <div class="break light"></div>
-              <div class="text">
-              <h2>$Title</h2>
-              $Content
-              </div>
-            </div>
-          <% end_loop %>
+      <% loop FAQPage %>
+        <div class="faq-view">
+          <div class="faq-block-view">
+            <a id="faqs" name="faqs"></a>
+            <h1>FAQS</h1>
+            <% loop FAQGeneralElements %>
+              <% include DisplayFAQTextBlock %>
+            <% end_loop %>
+          </div>
+          <div class="faq-block-view" id="shipping">
+            <a name="shipping"></a>
+            <h1>Shipping</h1>
+            <% loop FAQShippingElements %>
+              <% include DisplayFAQTextBlock %>
+            <% end_loop %>
+          </div>
+          <div class="faq-block-view">
+            <a id="terms" name="terms"></a>
+            <h1>Terms & Conditions</h1>
+            <% loop FAQTermsElements %>
+              <% include DisplayFAQTextBlock %>
+            <% end_loop %>
+          </div>
+          <div class="faq-block-view">
+            <a id="privacy" name="privacy"></a>
+            <h1>Privacy Policy</h1>
+            <% loop FAQPrivacyElements %>
+              <% include DisplayFAQTextBlock %>
+            <% end_loop %>
+          </div>
         </div>
-        <div class="faq-block-view">
-          <h1>Shipping</h1>
-          <% loop FAQShippingElements %>
-            <div class="text-block-view">
-              <div class="break light"></div>
-              <div class="text">
-              <h2>$Title</h2>
-              $Content
-              </div>
-            </div>
-          <% end_loop %>
-        </div>
-      </div>
+      <% end_loop %>
 
       <% include DisplayFooter %>
     </div>

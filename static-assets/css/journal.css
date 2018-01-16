@@ -19,6 +19,10 @@
 .journal-detail-view {
   padding: 72px 16px 0 16px;
   color: #000;
+
+    font-size: 1.2em;
+    line-height: 1.3em;
+  
 }
 
 .journal-detail-view .date {
@@ -88,7 +92,9 @@
   display: inline-block;
   width: 40%;
   vertical-align: top;
+  font-family: 'inconsolatabold';
   text-align: center;
+  padding-top: 2px;
 }
 
 .journal-detail-view .nav-right {
@@ -105,8 +111,6 @@
 @media (min-width: 768px) {
   .journal-detail-view {
     padding: 112px 82px 0 82px;
-    font-size: 1.2em;
-    line-height: 1.3em;
   }
 
   .journal-detail-view .date {
@@ -138,7 +142,6 @@
 @media (min-width: 992px) {
   .journal-detail-view {
     padding: 102px 110px 0 110px;
-    font-size: 1.3em;
   }
 
   .journal-detail-view h1 {
@@ -156,7 +159,6 @@
     margin: 0 auto;
     padding: 126px 0 0 0;
     width: 890px;
-    font-size: 1.5em;
   }
 
   .journal-detail-view .date {

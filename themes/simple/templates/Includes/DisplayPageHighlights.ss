@@ -7,7 +7,7 @@
           <img src="{$Top.PageLinkImage1.URL}">
           <div class="overlay"></div>
           <div class="text">
-            <div class="title">$MenuTitle</div>
+            <div class="title"><% if ShortName %>$ShortName<% else %>$MenuTitle<% end_if %></div>
             <div class="synopsis">$Top.PageLink1Synopsis</div>
           </div>
           </a>
@@ -24,7 +24,7 @@
           <img src="{$Top.PageLinkImage2.URL}">
           <div class="overlay"></div>
           <div class="text">
-            <div class="title">$MenuTitle</div>
+            <div class="title"><% if ShortName %>$ShortName<% else %>$MenuTitle<% end_if %></div>
             <div class="synopsis">$Top.PageLink2Synopsis</div>
           </div>
           </a>

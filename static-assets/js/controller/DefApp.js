@@ -308,6 +308,13 @@ define([
 
     handleResize();
 
+    if ($('body').attr('data-block') != undefined) {
+      var new_position = $('#'+$('body').attr('data-block')).offset();
+      if (new_position != undefined) {
+        window.scrollTo(new_position.left,new_position.top);
+      }
+    }
+
     $('.moment').each(function(){
       var strFormat = 'do MMMM YYYY';
       if ($(this).hasClass('day_month')) {
@@ -330,6 +337,7 @@ define([
     });
 
     $('.down').click(function(evt){
+      console.log($("#content").offset());
       $('html, body').animate({
         scrollTop: $("#content").offset().top
       }, 1000);
