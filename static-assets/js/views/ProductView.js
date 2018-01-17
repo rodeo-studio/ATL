@@ -32,6 +32,14 @@ define([
       });
     },
 
+    addSticky: function(){
+      $("#sticky_item").stick_in_parent({parent: '#product-detail-view', offset_top: 20});
+    },
+
+    removeSticky: function(){
+      $("#sticky_item").trigger("sticky_kit:detach");
+    },
+
     render: function(){
       var self = this;
 

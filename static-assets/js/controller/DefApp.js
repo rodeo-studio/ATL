@@ -15,12 +15,13 @@ define([
   'parallax',
   'macy',
   'slick',
+  'sticky',
   'cookie',
   'views/ProductsView',
   'views/ProductView',
   'views/ProductsExploreView',
   'views/CartView',
-], function(_, Backbone, bootstrap, modernizr, imageScale, WeatherView, HeroSlideView, moment, visible, parallax, Macy, slick, cookie, ProductsView, ProductView, ProductsExploreView, CartView){
+], function(_, Backbone, bootstrap, modernizr, imageScale, WeatherView, HeroSlideView, moment, visible, parallax, Macy, slick, sticky, cookie, ProductsView, ProductView, ProductsExploreView, CartView){
   app.dispatcher = _.clone(Backbone.Events);
 
   _.templateSettings = {
@@ -56,6 +57,10 @@ define([
     app.dispatcher.on("CartView:updatedRemove", onCartItemUpdatedRemoveLoaded);
     app.dispatcher.on("CartView:updateCartItemQty", onUpdateCartItemQty);
     app.dispatcher.on("CartView:removeCartItem", onRemoveCartItem);
+
+    function isBreakpoint( alias ) {
+      return $('.device-' + alias).is(':visible');
+    }
 
     function validateForm(elForm){
       var bValid = true;
@@ -138,6 +143,16 @@ define([
         $('#menu-overlay').css('height', 0);
       }
       checkInView();
+
+      if (productView) {
+        // are we mobile size)
+        if( isBreakpoint('xs') ) {
+          productView.removeSticky();
+        }
+        else {
+          productView.addSticky();
+        }
+      }
     }
 
     function onWeatherLoaded() {

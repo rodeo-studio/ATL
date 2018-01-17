@@ -34,15 +34,20 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
   <% include DisplayMainMenu %>
 </div>
 
+<div class="device-xs visible-xs"></div>
+<div class="device-sm visible-sm"></div>
+<div class="device-md visible-md"></div>
+<div class="device-lg visible-lg"></div>
+
 <script type="text/template" id="productViewTemplate">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 nopadding">
-    <div class="image">
+  <div class="image-container">
+    <div class="image" id="sticky_item">
     {{ if (images.edges.length) { }}
       <img src="{{= images.edges[0].node.src }}">
     {{ } }}
     </div>
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 nopadding">
+  <div class="content-container">
     <div class="hidden-lg hidden-md hidden-sm break"></div>
     <div class="title"><h1>{{= title }}</h1></div>
     {{ if (variants.edges[0].node.availableForSale && variants.edges[0].node.price > 0) { }}
@@ -104,18 +109,15 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
                 <img src="{{= product.node.images.edges[0].node.src }}">
               {{ } }}
 
-
-      {{ if (!product.node.variants.edges[0].node.availableForSale) { }}
-        <div class="sticker-container">
-          <div class="sticker"><img src="static-assets/images/sold_out.svg"></div>
-        </div>
-      {{ } else if (product.node.variants.edges[0].node.price == 0) { }}
-        <div class="sticker-container">
-          <div class="sticker"><img src="static-assets/images/coming_soon.svg"></div>
-        </div>
-      {{ } }}
-
-
+              {{ if (!product.node.variants.edges[0].node.availableForSale) { }}
+                <div class="sticker-container">
+                  <div class="sticker"><img src="static-assets/images/sold_out.svg"></div>
+                </div>
+              {{ } else if (product.node.variants.edges[0].node.price == 0) { }}
+                <div class="sticker-container">
+                  <div class="sticker"><img src="static-assets/images/coming_soon.svg"></div>
+                </div>
+              {{ } }}
               </div>
               </a>
               <div class="detail">

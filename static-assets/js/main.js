@@ -19,6 +19,7 @@ require.config({
     parallax: 'libs/parallax.min',
     macy: 'libs/macy',
     slick: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min',
+    sticky: 'libs/jquery.sticky-kit.min',
     cookie: 'libs/js.cookie'
   },
   shim: {
@@ -37,6 +38,9 @@ require.config({
       deps: ['jquery']
     },
     'parallax' : {
+      deps: ['jquery']
+    },
+    'sticky' : {
       deps: ['jquery']
     },
     'cookie' : {
