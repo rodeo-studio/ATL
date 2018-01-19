@@ -28,7 +28,7 @@
 }
 
 .quote-view .attribution {
-  padding-top: 52px;
+  padding-top: 6px;
   font-size: 0.55em;
 }
 
@@ -36,13 +36,6 @@
 /******************************************/
 .about-photo-view {
   padding: 0 15px;
-}
-
-.about-photo-view .image-window {
-  min-height: 282px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .about-photo-view .about-caption {
@@ -82,20 +75,12 @@
     padding-bottom: 80px;
   }
 
-  .quote-view .attribution {
-    padding-top: 6px;
-  }
-
   .about-photo-view {
     padding: 0;
   }
   .about-photo-view.small-photo {
     padding-left: 104px;
     padding-right: 104px;
-  }
-
-  .about-photo-view .image-window {
-    min-height: 342px;
   }
 
   .about-photo-view .about-caption {
@@ -118,10 +103,6 @@
   .about-photo-view.small-photo {
     padding-left: 140px;
     padding-right: 140px;
-  }
-
-  .about-photo-view .image-window {
-    min-height: 446px;
   }
 
   .about-photo-view .about-caption {
@@ -152,10 +133,6 @@
   .about-photo-view.small-photo {
     padding-left: 184px;
     padding-right: 184px;
-  }
-
-  .about-photo-view .image-window {
-    min-height: 646px;
   }
 
   .about-photo-view .about-caption {

@@ -80,7 +80,7 @@
 
 .journal-detail-view .nav-left {
   display: inline-block;
-  width: 30%;
+  width: 25%;
   text-align: left;
 }
 
@@ -90,7 +90,7 @@
 
 .journal-detail-view .nav-all {
   display: inline-block;
-  width: 40%;
+  width: 50%;
   vertical-align: top;
   font-family: 'inconsolatabold';
   text-align: center;
@@ -99,7 +99,7 @@
 
 .journal-detail-view .nav-right {
   display: inline-block;
-  width: 30%;
+  width: 25%;
   text-align: right;
 }
 

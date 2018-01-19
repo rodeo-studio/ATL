@@ -53,7 +53,7 @@ var APP = 'DefApp';
             <% else %>
             <div class="about-photo-view small-photo">
             <% end_if %>
-              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+              <div class="image-window"><img src="{$HeroImage.URL}"></div>
               <% if ImageCredit %>
                 <div class="about-caption small-photo">{$ImageCredit}</div>
               <% end_if %>
@@ -64,7 +64,7 @@ var APP = 'DefApp';
             <% else %>
             <div class="about-photo-view">
             <% end_if %>
-              <div class="image-window" style="background-image: url('{$HeroImage.URL}')"></div>
+              <div class="image-window"><img src="{$HeroImage.URL}"></div>
               <% if ImageCredit %>
                 <div class="about-caption">{$ImageCredit}</div>
               <% end_if %>
