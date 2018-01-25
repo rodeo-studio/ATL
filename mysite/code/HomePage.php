@@ -2,6 +2,10 @@
 class HomePage extends Page {
 
   private static $db = array(
+    'SocialFacebook' => 'Text',
+    'SocialInstagram' => 'Text',
+    'SocialTwitter' => 'Text',
+    'SocialEmail' => 'Text',
     'Quote' => 'Text',
     'BaseImageParallax' => 'Boolean',
     'BaseImageCaption' => 'Text',
@@ -30,6 +34,11 @@ class HomePage extends Page {
 
     // remove fields
     $fields->removeFieldFromTab('Root.Main', 'Content');
+
+    $fields->addFieldToTab('Root.Social', new TextField('SocialFacebook', 'Facebook URL'));
+    $fields->addFieldToTab('Root.Social', new TextField('SocialInstagram', 'Instagram URL'));
+    $fields->addFieldToTab('Root.Social', new TextField('SocialTwitter', 'Twitter URL'));
+    $fields->addFieldToTab('Root.Social', new TextField('SocialEmail', 'Email address'));
 
     // Hero Image
     $fields->addFieldToTab('Root.Main', new LiteralField('literalfield', '<strong>Hero Image</strong>')); 

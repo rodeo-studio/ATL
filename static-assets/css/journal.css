@@ -19,10 +19,8 @@
 .journal-detail-view {
   padding: 72px 16px 0 16px;
   color: #000;
-
-    font-size: 1.2em;
-    line-height: 1.3em;
-  
+  font-size: 1.2em;
+  line-height: 1.3em;
 }
 
 .journal-detail-view .date {

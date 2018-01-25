@@ -2,6 +2,8 @@
 /******************************************/
 .about-detail-view {
   padding-bottom: 56px;
+  font-size: 1.2em;
+  line-height: 1.3em;
 }
 
 .about-detail-view .dark-background {
@@ -52,7 +54,6 @@
 
   .about-text-view {
     padding: 104px 80px 80px 80px;
-    font-size: 1.2em;
   }
 
   .about-text-view p {

@@ -4,7 +4,7 @@ body {
   font-family: 'inconsolataregular';
   font-size: 13px;
   line-height: 1.4em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #FFF;
   background-color: #FFF;
 }
@@ -40,6 +40,7 @@ h2 {
 
 strong {
   font-family: 'inconsolatabold';
+  font-weight: normal;
 }
 
 .flex-grid {
@@ -285,10 +286,10 @@ img.scale {
 .break {
   width: 100%;
   height: 5px;
-  background: url("../images/break_line.svg") repeat-x;
+  background: url("../images/zigzag_black_outline-short.svg") repeat-x;
 }
 .break.light {
-  background: url("../images/break_line_light.svg") repeat-x;
+  background: url("../images/zigzag_light-grey_outline-short.svg") repeat-x;
 }
 
 /* CART */

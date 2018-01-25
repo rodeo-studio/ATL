@@ -26,5 +26,7 @@ class Page_Controller extends ContentController
 
         date_default_timezone_set("Australia/Adelaide");
         $this->LocationFriendlyTime = date('h:i a', time());
+        
+        $this->Home = DataObject::get_one('HomePage');
     }
 }

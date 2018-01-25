@@ -4,7 +4,9 @@ class ContactPage extends Page {
   private static $db = array(
     'MainContactInfo' => 'HTMLText',
     'StockingContactInfo' => 'HTMLText',
-    'MediaContactInfo' => 'HTMLText'
+    'MediaContactInfo' => 'HTMLText',
+    'BaseImageParallax' => 'Boolean',
+    'BaseImageCaption' => 'Text'
   );
 
   private static $has_many = array(
@@ -36,11 +38,12 @@ class ContactPage extends Page {
     $fields->addFieldToTab('Root.Main', new HtmlEditorField('StockingContactInfo', 'Stocking Contact'));
     $fields->addFieldToTab('Root.Main', new HtmlEditorField('MediaContactInfo', 'Media Contact'));
 
-    // Base Image
     $fields->addFieldToTab('Root.Main', new LiteralField('literalfield', '<strong>Base Image</strong>')); 
     $uploadField1 = new UploadField($name = 'BaseImage', $title = 'Image');
     $uploadField1->setCanUpload(false);
     $fields->addFieldToTab('Root.Main', $uploadField1);
+    $fields->addFieldToTab("Root.Main", new CheckboxField ('BaseImageParallax', 'Enable Parallax'));
+    $fields->addFieldToTab('Root.Main', new TextField('BaseImageCaption', 'Caption'));
 
     // Page extra links
     $fields->addFieldToTab('Root.PageLinks', new LiteralField('literalfield', '<strong>Page Extra Link 1</strong>'));

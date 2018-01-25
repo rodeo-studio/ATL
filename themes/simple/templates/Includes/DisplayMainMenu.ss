@@ -1,10 +1,8 @@
 <div id="cart-view"></div>
 
 <div class="top-logo"><a href="{$BaseHref}">
-
 <div class="logo black"><img src="static-assets/images/logo.svg"></div>
 <div class="logo white"><img src="static-assets/images/logo_white.svg"></div>
-
 </a></div>
 
 <div id="menu-overlay">

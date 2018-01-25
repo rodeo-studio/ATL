@@ -84,13 +84,13 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     <div class="hidden-xs break light"></div>
 
     <div class="hidden-xs back-nav">
-      <div class="back-link"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></div>
+      <div class="back-link"><a href="{$BaseHref}products"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
     </div>
   </div>
 
   <div class="hidden-lg hidden-md hidden-sm col-xs-12 nopadding">
     <div class="back-nav">
-      <div class="back-link"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></div>
+      <div class="back-link"><a href="{$BaseHref}products"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
     </div>
   </div>
 </script>

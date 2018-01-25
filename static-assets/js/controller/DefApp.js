@@ -352,7 +352,6 @@ define([
     });
 
     $('.down').click(function(evt){
-      console.log($("#content").offset());
       $('html, body').animate({
         scrollTop: $("#content").offset().top
       }, 1000);
@@ -369,10 +368,6 @@ define([
       $('#menu-overlay').toggleClass('open');
 
       handleResize();
-    });
-
-    $('.back-link').click(function(evt){
-      window.history.back();
     });
 
     $('.container-fluid').click(function(evt){

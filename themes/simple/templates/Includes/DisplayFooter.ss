@@ -11,12 +11,11 @@
           </div>
 
           <div class="thanks">Thank you for subscribing!</div>
-
         </form>
       </div>
       <div class="social">
       <ul>
-        <li><a href=""><i class="fa fa-facebook"></i></a></li><li><a href=""><i class="fa fa-instagram"></i></a></li><li><a href=""><i class="fa fa-twitter"></i></a></li><li><a href=""><i class="fa fa-envelope-o"></i></a></li>
+        <li><a href="{$Home.SocialFacebook}" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="{$Home.SocialInstagram}" target="_blank"><i class="fa fa-instagram"></i></a></li><li><a href="{$Home.SocialTwitter}" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="mailto:{$Home.SocialEmail}"><i class="fa fa-envelope-o"></i></a></li>
       </ul>
       </div>
 

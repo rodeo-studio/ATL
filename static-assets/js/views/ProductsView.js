@@ -13,7 +13,7 @@ define([
     load: function(strQueryType){
       var self = this;
 
-      var strQuery = '{ shop { products(first: 100) { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
+      var strQuery = '{ shop { products(sortKey:PRODUCT_TYPE, first: 100) { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
       if (strQueryType != 'All') {
         strQuery = '{ shop { products(first: 100, query:"product_type:' + strQueryType + '") { edges { node { id handle title variants(first: 100) { edges { node { id title price availableForSale } } } images(first: 1) { edges { node { id src } } } } } } } }';
       }
@@ -24,6 +24,7 @@ define([
         datatype: 'json',
         data: strQuery,
         success: function(response) {
+          console.log(response);
           self.products = response.data.shop.products;
           // fire event
           app.dispatcher.trigger("ProductsView:loaded", self);
