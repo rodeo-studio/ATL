@@ -24,7 +24,6 @@ define([
         datatype: 'json',
         data: strQuery,
         success: function(response) {
-          console.log(response);
           self.products = response.data.shop.products;
           // fire event
           app.dispatcher.trigger("ProductsView:loaded", self);

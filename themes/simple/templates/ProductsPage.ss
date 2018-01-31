@@ -19,7 +19,7 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
         <h1>$MenuTitle</h1>
         <div class="intro">$Content</div>
         <div class="links">
-          <span class="link" data-id="White">White</span> <span class="link" data-id="Red">Red</span> <span class="link" data-id="Mixed">Mixed Packs</span> <span class="link" data-id="All">All</span>
+          <span class="link" data-id="01 White">White</span> <span class="link" data-id="02 Red">Red</span> <span class="link" data-id="03 Mixed">Mixed Packs</span> <span class="link" data-id="All">All</span>
         </div>
         <div class="break"></div>
       </div>
