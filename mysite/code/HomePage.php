@@ -4,7 +4,6 @@ class HomePage extends Page {
   private static $db = array(
     'SocialFacebook' => 'Text',
     'SocialInstagram' => 'Text',
-    'SocialTwitter' => 'Text',
     'SocialEmail' => 'Text',
     'Quote' => 'Text',
     'BaseImageParallax' => 'Boolean',
@@ -37,7 +36,6 @@ class HomePage extends Page {
 
     $fields->addFieldToTab('Root.Social', new TextField('SocialFacebook', 'Facebook URL'));
     $fields->addFieldToTab('Root.Social', new TextField('SocialInstagram', 'Instagram URL'));
-    $fields->addFieldToTab('Root.Social', new TextField('SocialTwitter', 'Twitter URL'));
     $fields->addFieldToTab('Root.Social', new TextField('SocialEmail', 'Email address'));
 
     // Hero Image

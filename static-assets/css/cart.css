@@ -67,6 +67,7 @@
 }
 
 .cart-detail-view .item {
+  position: relative;
   line-height: 34px;
   min-height: 34px;
   margin: 0;
@@ -86,6 +87,12 @@
 .cart-detail-view .item .remove-link,
 .cart-detail-view .item .total-price {
   font-size: 1.3em;
+}
+
+.cart-detail-view .item .remove-link.stick-to-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .cart-detail-view .price,

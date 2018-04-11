@@ -285,11 +285,11 @@ img.scale {
 /******************************************/
 .break {
   width: 100%;
-  height: 5px;
-  background: url("../images/zigzag_black_outline-short.svg") repeat-x;
+  height: 8px;
+  background: url("../images/zigzag_black_outline-short.png") repeat-x;
 }
 .break.light {
-  background: url("../images/zigzag_light-grey_outline-short.svg") repeat-x;
+  background: url("../images/zigzag_light-grey_outline-short.png") repeat-x;
 }
 
 /* CART */
@@ -768,7 +768,7 @@ img.scale {
 
   .quote-view {
     padding: 0 122px 104px 122px;
-    font-size: 3.2em;
+    font-size: 2.5em;
     line-height: 1.2em;
   }
 
