@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-$MetaTags(false)
+$MetaTags(true)
 <meta name="google" value="notranslate">
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">

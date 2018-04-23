@@ -181,6 +181,11 @@ define([
         app.dispatcher.trigger("CartView:removeCartItem", elCart.attr('data-id'), $(this).attr('data-id'));
       });
 
+      $('.checkout-btn').click(function(evt){
+        console.log('c');
+        $('#termsModal').modal();
+      });
+
       // show that the cart was updated
       if (this.bUpdated) {
         $('.cart-menu .cart', elContainer).addClass('update-colour');

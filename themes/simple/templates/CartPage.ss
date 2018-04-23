@@ -37,6 +37,7 @@ var APP = 'DefApp';
 <script type="text/template" id="cartDetailViewTemplate">
   <div class="cart" data-id="{{= cart.checkout.id }}">
     {{ if (cart.checkout.lineItems.edges.length) { }}
+      <div class="break"></div>
       <div class="titles row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 nopadding"></div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 price nopadding">Price</div>
@@ -91,10 +92,26 @@ var APP = 'DefApp';
 
     <div class="btns row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-      <a class="btn" href="{$BaseHref}products">Back to wines</a>{{ if (cartValid) { }}<a class="btn primary-btn" href="{{= cart.checkout.webUrl }}">Checkout</a>{{ } }}
+      <a class="btn" href="{$BaseHref}products">Back to wines</a>{{ if (cartValid) { }}<span class="btn primary-btn checkout-btn">Checkout</span>{{ } }}
       </div>
     </div>
   </div>
+
+  <div id="termsModal" class="modal overlay" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text">
+          If you purchase products from Atlas  Wines through this site, you warrant that: you agree to our <a href="{$BaseHref}faqs/terms">Terms &amp; Conditions</a> and that you are aged 18 years or older.
+          </div>
+          <div class="btns">
+          <span class="btn primary-btn" data-dismiss="modal">Cancel</span><a class="btn primary-btn" href="{{= cart.checkout.webUrl }}">I agree</a>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 </script>
 
 <% include DisplayAnalytics %>
