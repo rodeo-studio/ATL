@@ -23,10 +23,6 @@ var APP = 'DefApp';
         <div id="cart-detail-view"></div>
       </div>
 
-      <% include DisplayFeaturePhoto %>
-
-      <% include DisplayPageExtraHighlights %>
-
       <% include DisplayFooter %>
     </div>
   </div>
@@ -62,7 +58,6 @@ var APP = 'DefApp';
           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding remove-link hidden-xs"><span class="link btn-remove-cart-item" data-id="{{= item.node.id }}">Remove</span></div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding total-price">
           {{ var total_price = item.node.variant.price * item.node.quantity }}
-
           ${{= total_price.toFixed(2) }}
           </div>
 

@@ -368,6 +368,7 @@ img.scale {
 /******************************************/
 .cart .btn {
   height: 34px;
+  letter-spacing: 0.1em;
   color: #FFF;
   background: #000;
   border-radius: 0;

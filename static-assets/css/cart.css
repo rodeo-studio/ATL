@@ -23,7 +23,7 @@
 }
 
 .cart-intro-view h1 {
-  padding-bottom: 74px;
+  padding-bottom: 46px;
   font-size: 3.3em;
 }
 
@@ -40,7 +40,7 @@
 /* CART DETAIL VIEW */
 /******************************************/
 .cart-detail-view {
-  padding: 0 16px 48px 16px;
+  padding: 0 16px 56px 16px;
   color: #000;
 }
 
@@ -49,14 +49,14 @@
   font-size: 0.85em;
   margin: 0;
   padding: 24px 0 16px 0;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #cccccc;
 }
 
 .cart-detail-view .title {
-  font-family: 'ano_blackwide';
+  font-family: 'inconsolatabold';
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 0.85em;
+  font-size: 0.8em;
   line-height: 1.3em;
 }
 
@@ -72,7 +72,7 @@
   min-height: 34px;
   margin: 0;
   padding: 30px 0 20px 0;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #cccccc;
 }
 
 .cart-detail-view .cart .qty-selector {
@@ -80,7 +80,7 @@
 }
 
 .cart-detail-view .item.invalid  .qty-selector {
-  border: 1px solid #CC0000;
+  border: 1px solid #D0021B;
 }
 
 .cart-detail-view .item .title{
@@ -90,7 +90,7 @@
 .cart-detail-view .item .price,
 .cart-detail-view .item .remove-link,
 .cart-detail-view .item .total-price {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .cart-detail-view .item .remove-link.stick-to-bottom {
@@ -124,8 +124,8 @@
 
 .cart-detail-view .cart-invalid {
   padding: 10px 0 10px 0;
-  color: #CC0000;
-  text-align: right;
+  color: #D0021B;
+  text-align: left;
 }
 
 .cart-detail-view .cart .btns {
@@ -154,25 +154,29 @@
   }
 
   .cart-detail-view {
-    padding: 0 38px 48px 38px;
+    padding: 0 38px 156px 38px;
   }
 
   .cart-detail-view .titles {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 
   .cart-detail-view .title {
-    font-size: 1.3em;
+    font-size: 1.25em;
   }
 
   .cart-detail-view .item .price,
   .cart-detail-view .item .remove-link,
   .cart-detail-view .item .total-price {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   .cart-detail-view .summary .title {
     font-size: 1.7em;
+  }
+
+  .cart-detail-view .cart-invalid {
+    text-align: right;
   }
 }
 
@@ -183,6 +187,7 @@
   }
 
   .cart-intro-view h1 {
+    padding-bottom: 52px;
     font-size: 5.8em;
   }
 
@@ -193,7 +198,7 @@
   }
 
   .cart-detail-view {
-    padding: 0 108px 48px 108px;
+    padding: 0 108px 156px 108px;
   }
 }
 
@@ -209,6 +214,6 @@
   }
 
   .cart-detail-view {
-    padding: 0 162px 48px 162px;
+    padding: 0 162px 156px 162px;
   }
 }
