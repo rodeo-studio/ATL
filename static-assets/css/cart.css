@@ -90,13 +90,17 @@
 .cart-detail-view .item .price,
 .cart-detail-view .item .remove-link,
 .cart-detail-view .item .total-price {
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 .cart-detail-view .item .remove-link.stick-to-bottom {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.cart-detail-view .little-space {
+  padding-left: 4px;
 }
 
 .cart-detail-view .price,
@@ -119,7 +123,7 @@
 }
 
 .cart-detail-view .summary .title {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .cart-detail-view .cart-invalid {

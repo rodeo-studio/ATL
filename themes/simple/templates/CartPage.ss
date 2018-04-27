@@ -39,7 +39,7 @@ var APP = 'DefApp';
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 price nopadding">Price</div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 qty nopadding">Qty</div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs nopadding"></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 total-price nopadding">Sub Total</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 total-price nopadding">Sub<span class="little-space"></span>Total</div>
       </div>
       {{ _.each(cart.checkout.lineItems.edges, function(item, index) { }}
         <div class="item row {{ if (!item.valid) { }}invalid{{ } }}">
