@@ -52,6 +52,27 @@ strong {
   display: none;
 }
 
+a,
+a:visited,
+a:active {
+  color: #84754E;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #84754E;
+  text-decoration: none;
+}
+
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus {
+  outline: none;
+}
+
 /* BOOTSTRAP */
 /******************************************/
 .nopadding {

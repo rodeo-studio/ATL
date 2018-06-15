@@ -2,6 +2,10 @@
 class FAQPage extends Page {
 
   private static $db = array(
+    'FAQGeneralTitle' => 'Text',
+    'FAQShippingTitle' => 'Text',
+    'FAQTermsConditionsTitle' => 'Text',
+    'FAQPrivacyTitle' => 'Text'    
   );
 
   private static $has_many = array(
@@ -32,6 +36,7 @@ class FAQPage extends Page {
       $config
     );
     $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ General</strong>')); 
+    $fields->addFieldToTab('Root.Main', new TextField('FAQGeneralTitle', 'Title')); 
     $fields->addFieldToTab('Root.Main', $faqGeneralElementField); 
 
     $config2 = GridFieldConfig_RelationEditor::create();
@@ -45,6 +50,7 @@ class FAQPage extends Page {
       $config2
     );
     $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Shipping</strong>')); 
+    $fields->addFieldToTab('Root.Main', new TextField('FAQShippingTitle', 'Title')); 
     $fields->addFieldToTab('Root.Main', $faqShippingElementField); 
 
     $config3 = GridFieldConfig_RelationEditor::create();
@@ -57,7 +63,8 @@ class FAQPage extends Page {
       $this->FAQTermsElements(),
       $config3
     );
-    $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Terms & Conditions</strong>')); 
+    $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Terms & Conditions</strong>'));
+    $fields->addFieldToTab('Root.Main', new TextField('FAQTermsConditionsTitle', 'Title')); 
     $fields->addFieldToTab('Root.Main', $faqTermsElementField); 
 
     $config4 = GridFieldConfig_RelationEditor::create();
@@ -71,6 +78,7 @@ class FAQPage extends Page {
       $config4
     );
     $fields->addFieldToTab('Root.Main', new LiteralField ('literalfield', '<strong>FAQ Privacy Policy</strong>')); 
+    $fields->addFieldToTab('Root.Main', new TextField('FAQPrivacyTitle', 'Title')); 
     $fields->addFieldToTab('Root.Main', $faqPrivacyElementField); 
 
     return $fields;
@@ -88,6 +96,7 @@ class FAQPage_Controller extends Page_Controller {
       $this->FAQBlockAnchor = $this->getRequest()->param('FAQBlock');
     }
     $this->FAQPage = DataObject::get_one("FAQPage");
+    $this->Title = $this->FAQPage->Title;
   }
 
   public function index($request) {

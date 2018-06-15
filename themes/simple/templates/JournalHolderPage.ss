@@ -7,6 +7,7 @@
 </head>
 
 <body class="header-colour-toggle">
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 </script>
@@ -60,8 +61,6 @@ var APP = 'DefApp';
 
   <% include DisplayMainMenu %>
 </div>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>

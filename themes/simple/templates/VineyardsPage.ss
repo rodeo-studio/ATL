@@ -7,6 +7,7 @@
 </head>
 
 <body class="header-colour-toggle">
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
@@ -68,8 +69,6 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
 
   <% include DisplayMainMenu %>
 </div>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>

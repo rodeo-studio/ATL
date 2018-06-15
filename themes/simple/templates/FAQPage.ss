@@ -7,6 +7,7 @@
 </head>
 
 <body data-block="{$FAQBlockAnchor}">
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 </script>
@@ -18,28 +19,28 @@ var APP = 'DefApp';
         <div class="faq-view">
           <div class="faq-block-view">
             <a id="faqs" name="faqs"></a>
-            <h1>FAQS</h1>
+            <h1>$FAQGeneralTitle</h1>
             <% loop FAQGeneralElements %>
               <% include DisplayFAQTextBlock %>
             <% end_loop %>
           </div>
           <div class="faq-block-view" id="shipping">
             <a name="shipping"></a>
-            <h1>Shipping</h1>
+            <h1>$FAQShippingTitle</h1>
             <% loop FAQShippingElements %>
               <% include DisplayFAQTextBlock %>
             <% end_loop %>
           </div>
           <div class="faq-block-view">
             <a id="terms" name="terms"></a>
-            <h1>Terms & Conditions</h1>
+            <h1>$FAQTermsConditionsTitle</h1>
             <% loop FAQTermsElements %>
               <% include DisplayFAQTextBlock %>
             <% end_loop %>
           </div>
           <div class="faq-block-view">
             <a id="privacy" name="privacy"></a>
-            <h1>Privacy Policy</h1>
+            <h1>$FAQPrivacyTitle</h1>
             <% loop FAQPrivacyElements %>
               <% include DisplayFAQTextBlock %>
             <% end_loop %>
@@ -53,8 +54,6 @@ var APP = 'DefApp';
 
   <% include DisplayMainMenu %>
 </div>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>

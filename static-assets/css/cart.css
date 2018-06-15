@@ -141,6 +141,7 @@
 .cart-detail-view .cart .btns .btn {
   margin-left: 28px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 /* Small devices (tablets, 768px and up) */

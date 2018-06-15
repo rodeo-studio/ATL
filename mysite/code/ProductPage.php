@@ -30,6 +30,9 @@ class ProductPage_Controller extends Page_Controller {
     if ($this->getRequest()->param('ProductID')) {
       $this->ProductID = $this->getRequest()->param('ProductID');
     }
+
+    $this->ProductPage = DataObject::get_one("ProductPage");
+    $this->Title = $this->ProductPage->Title;
   }
 
   public function index($request) {

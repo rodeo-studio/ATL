@@ -169,7 +169,6 @@ define([
     }
 
     function onProductAddToCart(productID, nQty) {
-      console.log('onProductAddToCart');
       var cartCookie = getCartCookie();
       if (cartCookie != undefined) {
         cartView.add(cartCookie, productID, nQty);
@@ -200,7 +199,6 @@ define([
     }
 
     function onCartItemAddedLoaded(jsonCart) {
-      console.log('onCartItemAddedLoaded');
       if ($('#cart-view').length) {
         cartView.render(jsonCart.data.checkoutLineItemsAdd, $('#cart-view'), $('#cartViewTemplate'));
       }

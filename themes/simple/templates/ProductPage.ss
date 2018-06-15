@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 var PRODUCT_ID = '{$ProductID}';
@@ -84,13 +85,13 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     <div class="hidden-xs break light"></div>
 
     <div class="hidden-xs back-nav">
-      <div class="back-link"><a href="{$BaseHref}products"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
+      <div class="back-link"><a href="{$BaseHref}wines"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
     </div>
   </div>
 
   <div class="hidden-lg hidden-md hidden-sm col-xs-12 nopadding">
     <div class="back-nav">
-      <div class="back-link"><a href="{$BaseHref}products"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
+      <div class="back-link"><a href="{$BaseHref}wines"><img src="static-assets/images/left_arrow.svg"><div class="link">Back to wines</div></a></div>
     </div>
   </div>
 </script>
@@ -143,8 +144,6 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     <div class="arrow next-arrow"><img src="static-assets/images/right_arrow.svg"></div>
   </div>
 </script>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>

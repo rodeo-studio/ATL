@@ -8,7 +8,7 @@
 <div id="menu-overlay">
   <div class="menus">
   <ul>
-    <li><a href="{$BaseHref}products">Wines</a></li>
+    <li><a href="{$BaseHref}wines">Wines</a></li>
     <li><a href="{$BaseHref}about">About Us</a></li>
     <li><a href="{$BaseHref}journal">Journal</a></li>
     <li><a href="{$BaseHref}vineyards-and-growers">Vineyards &amp; Growers</a></li>

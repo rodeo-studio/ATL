@@ -2,7 +2,7 @@
 class FAQElement extends DataObject {
   private static $db = array(
     'SortID'=>'Int',
-    'Title' => 'Varchar',
+    'Title' => 'Text',
     'Content' => 'HTMLText'
   );
 

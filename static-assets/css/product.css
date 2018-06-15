@@ -217,6 +217,10 @@
   text-decoration: none;
 }
 
+.product-explore-view .product a:focus {
+  outline: none;
+}
+
 .product-explore-view .product .detail {
   padding-top: 22px;
 }

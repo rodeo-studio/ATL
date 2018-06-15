@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
@@ -43,7 +44,7 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
   {{ _.each(products.edges, function(product, index) { }}
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 nopadding">
       <div class="product-view">
-        <a href="{$BaseHref}products/product/{{= product.node.handle }}">
+        <a href="{$BaseHref}wines/wine/{{= product.node.handle }}">
         <div class="image">
         {{ if (product.node.images.edges.length) { }}
           <img src="{{= product.node.images.edges[0].node.src }}">
@@ -64,8 +65,6 @@ var LOCATION_FRIENDLY_TIME = '$LocationFriendlyTime';
     </div>
   {{ }); }}
 </script>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>

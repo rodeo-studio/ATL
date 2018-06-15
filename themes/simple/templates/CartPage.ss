@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<% include DisplayAnalytics %>
 <script>
 var APP = 'DefApp';
 </script>
@@ -106,10 +107,7 @@ var APP = 'DefApp';
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
 </script>
-
-<% include DisplayAnalytics %>
 </body>
 <script data-main="static-assets/js/main" src="static-assets/js/libs/require.min.js"></script>
 </html>
